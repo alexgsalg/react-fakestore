@@ -1,0 +1,25 @@
+.baseButton {
+
+  padding: 15px 20px;
+  background-color: var(--orange);
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font: 700 1rem/1em var(--font-default);
+  color: var(--white);
+  transition: all 0.2s linear;
+  
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.baseButton:hover {
+  background-color: var(--orange-dark);
+  box-shadow: 5px 5px 20px 9px hsla(26, 100%, 55%, 0.15);
+}
+
+.baseButton path {
+  fill: var(--white);
+}

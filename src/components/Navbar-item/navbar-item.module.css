@@ -1,0 +1,12 @@
+.header_menu__item {
+  padding-bottom: 2.7rem;
+  color: var(--blue-grayish-dark);
+  border-bottom: 3px solid transparent;
+  transition: all 250ms ease-out;
+}
+
+[class*='active'],
+.header_menu__item:hover {
+  color: var(--black);
+  border-bottom-color: var(--orange);
+}

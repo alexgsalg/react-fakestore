@@ -1,0 +1,12 @@
+.header_menu {
+  flex: 1;
+  padding-right: 3rem;
+}
+
+nav.header_menu_container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 2.0625rem;
+  height: 100%;
+}

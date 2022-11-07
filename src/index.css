@@ -1,0 +1,77 @@
+:root {
+  /* Font */
+  --font-default: 'Kumbh Sans', Inter, Avenir, Helvetica, Arial, sans-serif;
+  --font-single: 'Kumbh Sans';
+  font-family: var(--font-default);
+  font-size: 1rem;
+  line-height: 1.6em;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  /* Primary Colors */
+  --orange-dark: hsl(26, 86%, 48%);
+  --orange: hsl(26, 100%, 55%);
+  --orange-light: hsl(25, 100%, 94%);
+
+  /* Neutral Colors */
+  --blue-darker: hsl(220, 13%, 13%);
+  --blue-grayish-dark: hsl(219, 9%, 45%);
+  --blue-grayish: hsl(220, 14%, 75%);
+  --blue-grayish-light: hsl(223, 64%, 98%);
+  --blue-grayish-opacity: hsla(220, 14%, 75%, 0.5);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --black-opacity: hsla(0, 0%, 0%, 0.75);
+}
+
+/* Helper Classes */
+.wrapper {
+  max-width: 69.375rem;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.flex_Jstart_Acenter {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex_Jcenter_Acenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex_Jend_Acenter {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }

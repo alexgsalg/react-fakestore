@@ -1,0 +1,31 @@
+.cart_icon_container {
+  position: relative; 
+  top: -0.0625rem;
+  width: 1.563rem;
+  height: 1.563rem;
+}
+
+.cart_icon_svg {
+  cursor: pointer;
+}
+
+.cart_icon_svg path {
+  fill: var(--blue-grayish-dark);
+  transition: fill 250ms ease-out;
+}
+
+.cart_icon_svg:hover path {
+  fill: var(--black);
+}
+
+.cart_icon_count {
+  position: absolute;
+  inset: -0.35rem auto auto 40%;
+  padding: 0.125rem 0.3rem 0.11rem;
+  background-color: var(--orange);
+  border-radius: 50%;
+  color: var(--white);
+  font: 0.625rem/1em var(--font-single);
+  font-weight: 700;
+  pointer-events: none;
+}
