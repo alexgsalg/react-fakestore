@@ -1,7 +1,7 @@
 :root {
   /* Font */
   --font-default: 'Kumbh Sans', Inter, Avenir, Helvetica, Arial, sans-serif;
-  --font-single: 'Kumbh Sans';
+  --font-title: 'Kanit', Avenir, sans-serif;
   font-family: var(--font-default);
   font-size: 1rem;
   line-height: 1.6em;
@@ -15,7 +15,7 @@
 
   /* Primary Colors */
   --orange-dark: hsl(26, 86%, 48%);
-  --orange: hsl(26, 100%, 55%);
+  --orange: hsl(21, 100%, 62%);
   --orange-light: hsl(25, 100%, 94%);
 
   /* Neutral Colors */
@@ -25,7 +25,7 @@
   --blue-grayish-light: hsl(223, 64%, 98%);
   --blue-grayish-opacity: hsla(220, 14%, 75%, 0.5);
   --white: hsl(0, 0%, 100%);
-  --black: hsl(0, 0%, 0%);
+  --black: hsl(0, 0%, 15%);
   --black-opacity: hsla(0, 0%, 0%, 0.75);
 }
 
@@ -34,6 +34,13 @@
   max-width: 69.375rem;
   width: 100%;
   margin-inline: auto;
+}
+
+.not_clicable {
+  pointer-events: none;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .flex_Jstart_Acenter {
