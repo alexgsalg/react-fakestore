@@ -5,8 +5,8 @@
 // images
 // styles
 
-const MenSection = () => {
+const Products = () => {
   return <div>Men section.component</div>;
 };
 
-export default MenSection;
+export default Products;
