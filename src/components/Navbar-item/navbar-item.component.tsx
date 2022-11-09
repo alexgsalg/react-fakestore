@@ -14,9 +14,12 @@ interface NavigationItemProps {
 }
 
 const NavbarItem = ({ dataName, activeClassName, ...props }: NavigationItemProps) => {
-  // const activeClassName = 'active';
+  const activeClass = 'active';
   return (
-    <NavLink to={`/${dataName.toLowerCase()}`} className={styles.header_menu__item} {...props}>
+    <NavLink
+      to={`/${dataName.toLowerCase() !== 'home' ? dataName.toLowerCase() : ''}`}
+      className={styles.header_menu__item}
+      {...props}>
       {dataName}
     </NavLink>
   );

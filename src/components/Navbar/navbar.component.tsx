@@ -1,16 +1,14 @@
 // plugins
-import { NavLink } from 'react-router-dom';
 // context
 // components
 import NavbarItem from '../Navbar-item/navbar-item.component';
 // imports
 // images
 // styles
-// import './navbar.styles.css';
 import styles from './navbar.module.css';
 
 const Navbar = () => {
-  const routeToShow = ['Collections', 'Men', 'Women', 'About', 'Contact'];
+  const routeToShow = ['Home', 'Products', 'Categories', 'About', 'Career'];
 
   return (
     <nav className={styles.header_menu_container}>

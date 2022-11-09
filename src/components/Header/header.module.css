@@ -13,18 +13,55 @@
   border-bottom: 1px solid var(--blue-grayish-opacity);
 }
 
-.header_logo {
+.header_logo_container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   padding-top: 0.6875rem;
-  padding-right: 5%; 
-}
-
-.header_logo svg {
+  margin-right: 5%; 
   cursor: pointer;
-  transition: opacity 250ms ease-in;
 }
 
-.header_logo svg:hover {
-  opacity: 0.8;
+/* Text logo */
+.header_logo {
+  position: relative;
+  composes: not_clicable from '/src/index.css';
+  
+  font-family: var(--font-title);
+  font-size: clamp(1.7rem, 1.8rem, 1.95rem);
+  letter-spacing: -.1rem;
+  line-height: 1em;
+  color: var(--black);
+  transition: all 250ms ease-in;
+}
+
+.header_logo > strong {
+  position: relative;
+  display: inline-block;
+  transition: all 250ms ease-in;
+  z-index: 91;
+}
+
+.header_logo > strong::before {
+  position: absolute;
+  content: attr(data-text);
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--orange);
+  color: var(--white);
+  overflow: hidden;
+  transition: all 200ms ease-in;
+  z-index: 90;
+}
+
+/* .header_logo_container:hover .header_logo > strong {
+  color: var(--white);
+} */
+
+.header_logo_container:hover .header_logo > strong::before {
+  width: 104%;
 }
 
 .header_menu {
