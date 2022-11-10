@@ -5,6 +5,7 @@ import { MouseEventHandler, useState } from 'react';
 // imports
 // images
 import { ReactComponent as CartIconSvg } from '../../assets/images/icon-cart.svg';
+import Icon from '../Icon/icon.component';
 // styles
 import styles from './cart-icon.module.css';
 

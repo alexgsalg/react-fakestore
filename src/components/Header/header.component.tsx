@@ -24,7 +24,9 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.header_container}>
         <div className={styles.header_logo_container} onClick={() => navigate('/')}>
-          <span className={styles.header_logo} aria-hidden="true"><strong data-text="Store">Store</strong>Faker</span>
+          <span className={styles.header_logo} aria-hidden='true'>
+            <strong data-text='Store'>Store</strong>Faker
+          </span>
         </div>
         <div className={styles.header_menu}>
           <Navbar />
@@ -37,13 +39,14 @@ const Header = () => {
           <div className={styles.header_actions__cart}>
             <CartIcon onCartIconClick={toggleCart} />
           </div>
-          <picture className={styles.header_actions__profile}>
-            <img src="https://xsgames.co/randomusers/avatar.php?g=male" alt='Avatar profile' />
-          </picture>
+          <div className={styles.header_actions__search}>
+            <Icon iconName='search' />
+          </div>
         </div>
       </div>
       {/* TODO: cart Toggle */}
-      <CartDrawer open={isCartOpen} closeDrawer={toggleCart} />
+      {isCartOpen ? <CartDrawer open={isCartOpen} closeDrawer={toggleCart} /> : null}
+      {/* Search bar */}
     </header>
   );
 };

@@ -1,5 +1,5 @@
 // plugins
-import { Dispatch, Fragment, MouseEventHandler, SetStateAction, useState } from 'react';
+import { Fragment, MouseEventHandler, useRef, useState } from 'react';
 // context
 // components
 // imports
@@ -11,13 +11,23 @@ type CartDrawerProps = {
   open: boolean;
   closeDrawer: MouseEventHandler<HTMLSpanElement>;
 };
+const duration = 300;
 
 const CartDrawer = ({ open = false, closeDrawer }: CartDrawerProps) => {
+  const nodeRef = useRef(null);
+  const [showAside, setShowAside] = useState<boolean>(true);
   const [cartItems, setCartItems] = useState<[]>([]);
+
+  const delayCloseDrawer = (event: any) => {
+    setShowAside(false);
+    setTimeout(() => {
+      closeDrawer(event);
+    }, duration);
+  };
 
   return (
     <Fragment>
-      <div className={`${styles.cart_drawer} ${open ? styles.cart_drawer_open : ''}`}>
+      <aside className={`${styles.cart_drawer} ${showAside ? styles.cart_drawer_open : ''}`}>
         <header className={styles.drawer_header}>
           <h3 className={styles.drawer__title}>Cart</h3>
         </header>
@@ -28,10 +38,10 @@ const CartDrawer = ({ open = false, closeDrawer }: CartDrawerProps) => {
             <span className={styles.empty_cart}>Your cart is empty</span>
           )}
         </div>
-      </div>
+      </aside>
       <span
-        className={`${styles.drawer_backlayer} ${open ? styles.drawer_backlayer_open : ''}`}
-        onClick={closeDrawer}></span>
+        className={`${styles.drawer_backlayer} ${showAside ? styles.drawer_backlayer_open : ''}`}
+        onClick={delayCloseDrawer}></span>
     </Fragment>
   );
 };
