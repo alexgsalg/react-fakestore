@@ -1,0 +1,23 @@
+@import '../../assets/sass/mixins.scss';
+
+.header_navbar {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  gap: 0.7rem;
+  height: 100%;
+}
+
+
+/*=============================================================================
+  Responsive Styles
+=============================================================================*/
+@include responsive(displaylow) {
+  .header_navbar {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 2.0625rem;
+    height: 100%;
+  }
+}

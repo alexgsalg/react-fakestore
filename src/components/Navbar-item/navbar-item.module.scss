@@ -1,0 +1,63 @@
+@import '../../assets/sass/mixins.scss';
+
+.header_menu__item {
+  position: relative;
+  padding: 0.7rem 1rem 0.5rem 1rem;
+  color: var(--white);
+  transition: all 250ms ease-out;
+}
+
+[class*='active'] {
+  padding-top: 0.1rem;
+  padding-left: 1.5rem;
+
+  &::before {
+    position: absolute;
+    inset: auto 0 0 1rem;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: var(--white);
+    transform: scaleX(1);
+    transform-origin: right;
+    transition: transform 200ms linear;
+  }
+}
+
+/*=============================================================================
+  Responsive Styles
+=============================================================================*/
+@include responsive(displaylow) {
+  .header_menu__item {
+    padding: 0.7rem;
+    color: var(--blue-grayish-dark);
+
+    &::before {
+      content: none;
+    }
+    
+    &::after {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      content: '';
+      width: 100%;
+      height: 2px;
+      border-radius: 10px;
+      background-color: var(--orange);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 200ms linear;
+    }
+  }
+  [class*='active']::after,
+  .header_menu__item:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  [class*='active'] {
+    color: var(--orange);
+    border-bottom: none;
+  }
+}

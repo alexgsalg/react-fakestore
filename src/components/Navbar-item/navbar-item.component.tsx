@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 // imports
 // images
 // styles
-import styles from './navbar-item.module.css';
+import styles from './navbar-item.module.scss';
 
 interface NavigationItemProps {
   dataName: string;

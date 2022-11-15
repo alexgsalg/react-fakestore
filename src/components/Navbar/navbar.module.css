@@ -1,7 +1,0 @@
-nav.header_navbar {
-  display: flex;
-  justify-content: flex-start;
-  align-items: stretch;
-  gap: 2.0625rem;
-  height: 100%;
-}

@@ -27,6 +27,9 @@
   --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 15%);
   --black-opacity: hsla(0, 0%, 0%, 0.75);
+
+  // Animations
+  --trs-fast: 250ms;
 }
 
 /* Helper Classes */
@@ -66,6 +69,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+#root{
+  overflow: hidden;
 }
 
 a {

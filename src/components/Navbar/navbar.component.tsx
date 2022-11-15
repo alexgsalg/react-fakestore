@@ -5,13 +5,17 @@ import NavbarItem from '../Navbar-item/navbar-item.component';
 // imports
 // images
 // styles
-import styles from './navbar.module.css';
+import styles from './navbar.module.scss';
 
-const Navbar = () => {
+type NavbarProps = {
+  mobileMenu: () => void;
+};
+
+const Navbar = ({ mobileMenu }: NavbarProps) => {
   const routeToShow = ['Home', 'Products', 'Categories', 'About', 'Career'];
 
   return (
-    <nav className={styles.header_navbar}>
+    <nav className={styles.header_navbar} onClick={mobileMenu}>
       {routeToShow
         ? routeToShow.map((route, idx) => (
             <NavbarItem dataName={route} key={idx} activeClassName='active' />

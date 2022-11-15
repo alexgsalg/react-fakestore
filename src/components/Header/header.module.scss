@@ -1,0 +1,213 @@
+@use '../../assets/sass/helpers.scss';
+@import '../../assets/sass/mixins.scss';
+
+.header {
+  width: 100%;
+  padding: 0.4rem 0.5rem;
+  border-bottom: 1px solid var(--blue-grayish-opacity);
+}
+
+.header_container {
+  @extend .wrapper;
+
+  display: grid;
+  grid-template-columns: 3.75rem auto min-content;
+  grid-template-areas: 
+    "menu logo actions";
+}
+
+.header_logo_container {
+  grid-area: logo;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-right: 5%; 
+  cursor: pointer;
+}
+
+/* Text logo */
+.header_logo {
+  position: relative;
+  @extend .not_clicable;
+  
+  font-family: var(--font-title);
+  font-size: clamp(1.7rem, 1.8rem, 1.95rem);
+  letter-spacing: -.1rem;
+  line-height: 1em;
+  transition: all 250ms ease-in;
+  
+  & > strong {
+    position: relative;
+    display: inline-block;
+    transition: all 250ms ease-in;
+    color: var(--orange);
+    z-index: 91;
+
+    &::before {
+      position: absolute;
+      content: attr(data-text);
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: var(--orange);
+      color: var(--white);
+      overflow: hidden;
+      transition: all 200ms ease-in;
+      z-index: 90;
+    }
+  }
+  
+  &:hover > strong::before {
+    width: 104%;
+  }
+}
+
+.header_menu {
+  position: fixed;
+  inset: 0 -70vw 0 auto;
+  width: clamp(200px, 66vw, 300px);
+  background-color: var(--orange);
+  z-index: 110;
+  transition: right ease-in var(--trs-fast);
+
+  &.open {
+    right: 0;
+  }
+}
+
+.header_actions {
+  grid-area: actions;
+  @extend .flex_Jend_Acenter;
+
+  gap: 0.5rem;
+  
+  &__cart,
+  &__search {
+    position: relative;
+    @extend .flex_Jcenter_Acenter;
+  
+    padding: 0.3rem;
+    cursor: pointer;
+  }
+  
+  &__search span {
+    color: var(--blue-grayish-dark);
+    transition: color 250ms ease-out;
+  }
+  
+  &__search:hover span {
+    color: var(--black);
+  }
+}
+
+.header_menu_icon {
+  grid-area: menu;
+}
+
+/* Menu icon */
+.menu_icon {
+	position: relative;
+	width: 2.8125rem;
+	height: 2.8125rem;
+	cursor: pointer;
+
+	.menu_icon__cheeckbox {
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: relative;
+		cursor: pointer;
+		z-index: 2;
+		-webkit-touch-callout: none;
+		position: absolute;
+		opacity: 0;
+	}
+	div {
+		margin: auto;
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		width: 22px;
+		height: 12px;
+	}
+	span {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 2px;
+		background-color: var(--blue-grayish-dark);
+		border-radius: 1px;
+		transition: all 0.2s cubic-bezier(0.1, 0.82, 0.76, 0.965);
+
+		&:first-of-type {
+			top: 0;
+		}
+		&:last-of-type {
+			bottom: 0;
+		}
+	}
+	&.active,
+	.menu_icon__cheeckbox:checked + div {
+		span {
+			&:first-of-type {
+				transform: rotate(45deg);
+				top: 5px;
+			}
+			&:last-of-type {
+				transform: rotate(-45deg);
+				bottom: 5px;
+			}
+		}
+	}
+
+	&.active:hover span:first-of-type,
+	&.active:hover span:last-of-type,
+	&:hover .menu_icon__cheeckbox:checked + div span:first-of-type,
+	&:hover .menu_icon__cheeckbox:checked + div span:last-of-type {
+		width: 22px;
+	}
+}
+
+/*=============================================================================
+  Responsive Styles
+=============================================================================*/
+@include responsive(displaylow) {
+
+  .header {
+    padding: 1rem;
+  }
+
+  .header_container {
+    grid-template-columns: minmax(110px, 150px) auto min-content;
+    grid-template-areas: 
+      "logo menu actions";
+  }
+  
+  .header_menu {
+    flex: 1;
+    position: relative;
+    width: unset;
+    inset: unset;
+    background-color: unset;
+  }
+  
+  .header_menu_icon {
+    display: none;
+  }
+  
+  .header_actions__cart,
+  .header_actions__search {
+  padding: 0.5rem;
+  }
+  
+  .menu_icon:hover span:first-of-type {
+    width: 26px;
+  }
+  
+  .menu_icon:hover span:last-of-type {
+    width: 12px;
+  }
+}
