@@ -25,15 +25,22 @@ const Header = () => {
       <div className={styles.header_container}>
         <div className={styles.header_logo_container} onClick={() => navigate('/')}>
           <span className={styles.header_logo} aria-hidden='true'>
-            <strong data-text='Store'>Store</strong>Faker
+            <strong data-text='Fake'>Fake</strong>Store
           </span>
         </div>
         <div className={styles.header_menu}>
           <Navbar />
           {/* Mobile TODO:*/}
-          {/* <div className={styles.header_menu_icon}>
-            <span></span>
-          </div> */}
+        </div>
+        <div className={styles.header_menu_icon}>
+          <span></span>
+          <div className={styles.menu_icon}>
+            <input className={styles.menu_icon__cheeckbox} type='checkbox' />
+            <div>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
         </div>
         <div className={styles.header_actions}>
           <div className={styles.header_actions__cart}>

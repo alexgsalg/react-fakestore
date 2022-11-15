@@ -11,7 +11,7 @@ const Navbar = () => {
   const routeToShow = ['Home', 'Products', 'Categories', 'About', 'Career'];
 
   return (
-    <nav className={styles.header_menu_container}>
+    <nav className={styles.header_navbar}>
       {routeToShow
         ? routeToShow.map((route, idx) => (
             <NavbarItem dataName={route} key={idx} activeClassName='active' />
