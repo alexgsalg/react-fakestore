@@ -1,7 +1,7 @@
 // plugins
 import { Fragment } from 'react';
 import { Outlet } from 'react-router-dom';
-// context
+// redux
 // components
 import Header from '../components/Header/header.component';
 // imports
@@ -9,6 +9,7 @@ import Header from '../components/Header/header.component';
 // styles
 
 const DefaultLayout = () => {
+
   return (
     <Fragment>
       <Header />

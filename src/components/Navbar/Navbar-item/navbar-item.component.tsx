@@ -1,6 +1,6 @@
 // plugins
 import { NavLink } from 'react-router-dom';
-// context
+// redux
 // components
 // imports
 // images

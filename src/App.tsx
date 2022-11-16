@@ -1,6 +1,7 @@
 // plugins
+import { useEffect } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
-// context
+// redux
 // components
 import DefaultLayout from './layouts/default.layout';
 import CareerLayout from './layouts/career.layout';
@@ -13,7 +14,6 @@ import SingleProduct from './pages/SingleProduct/single-product.page';
 import Career from './pages/Career/career.page';
 import SingleCareer from './pages/SingleCareer/single-career.page';
 // imports
-// images
 // styles
 
 const App = () => {

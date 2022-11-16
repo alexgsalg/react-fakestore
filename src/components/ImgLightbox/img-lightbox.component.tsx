@@ -1,7 +1,7 @@
 // plugins
 import { MouseEventHandler } from 'react';
 import ReactDOM from 'react-dom';
-// context
+// redux
 // components
 import Icon from '../Icon/icon.component';
 // imports

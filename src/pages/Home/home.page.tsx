@@ -1,13 +1,13 @@
 // plugins
 import { useEffect, useState } from 'react';
-// context
+// redux
 // components
 // imports
 import { ProductType } from '../../models/products.model';
 import { getProductPaginated } from '../../services/core.services';
 // images
 // styles
-import styles from './home.module.css';
+import styles from './home.module.scss';
 
 const Home = () => {
   const [store, setStore] = useState<ProductType[]>([]);

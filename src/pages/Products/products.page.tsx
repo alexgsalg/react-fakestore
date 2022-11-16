@@ -1,5 +1,5 @@
 // plugins
-// context
+// redux
 // components
 // imports
 // images

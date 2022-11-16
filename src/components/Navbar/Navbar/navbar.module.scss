@@ -1,4 +1,4 @@
-@import '../../assets/sass/mixins.scss';
+@import '../../../assets/sass/mixins.scss';
 
 .header_navbar {
   display: flex;
@@ -19,5 +19,6 @@
     align-items: stretch;
     gap: 2.0625rem;
     height: 100%;
+    padding-top: 0;
   }
 }

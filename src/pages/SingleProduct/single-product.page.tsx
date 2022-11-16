@@ -1,7 +1,7 @@
 // plugins
 import { useEffect, useState } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
-// context
+// redux
 // components
 import Icon from '../../components/Icon/icon.component';
 import Button from '../../components/Button/button.component';

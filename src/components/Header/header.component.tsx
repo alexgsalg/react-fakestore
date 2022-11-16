@@ -1,10 +1,13 @@
 // plugins
 import { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// context
+import { useSelector, useDispatch } from 'react-redux';
+// redux
+import { setCartOpenStatus } from '../../store/cart/cart.actions';
+import { selectCartStatus } from '../../store/cart/cart.selector';
 // components
 import CartIcon from '../../components/Cart-icon/cart-icon.component';
-import Navbar from '../Navbar/navbar.component';
+import Navbar from '../Navbar/Navbar/navbar.component';
 import CartDrawer from '../CartDrawer/cart-drawer.component';
 import Icon from '../Icon/icon.component';
 // imports
@@ -14,15 +17,17 @@ import styles from './header.module.scss';
 
 const Header = () => {
   const navigate = useNavigate();
-  const [isCartOpen, setIsCartOpen] = useState(false);
+  const dispatch = useDispatch();
+
+  const cartStatus: boolean = useSelector(selectCartStatus);
+
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleCart = () => setIsCartOpen(!isCartOpen);
+  const toggleCart = () => dispatch(setCartOpenStatus(!cartStatus));
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   const handleEscKey = useCallback((event: KeyboardEvent) => {
     if (event.key === 'Escape') {
-      setIsCartOpen(false);
       setMenuOpen(false);
     }
   }, []);
@@ -70,8 +75,8 @@ const Header = () => {
           </div>
         </div>
       </div>
-      {/* TODO: cart Toggle */}
-      {isCartOpen ? <CartDrawer open={isCartOpen} closeDrawer={toggleCart} /> : null}
+      {/* Cart Drawer */}
+      <CartDrawer />
       {/* Search bar */}
     </header>
   );

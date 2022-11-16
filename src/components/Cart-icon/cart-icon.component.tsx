@@ -1,6 +1,6 @@
 // plugins
 import { MouseEventHandler, useState } from 'react';
-// context
+// redux
 // components
 // imports
 // images

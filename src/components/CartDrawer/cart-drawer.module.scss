@@ -1,9 +1,11 @@
+@import '../../assets/sass/mixins.scss';
+
 .cart_drawer {
   position: fixed;
   display: flex;
   flex-direction: column;
-  inset: 0 -22.5rem 0 auto;
-  width: 22.5rem;
+  inset: 0 -40vw 0 auto;
+  width: clamp(300px, 40vw, 350px);
   min-height: 16.25rem;
   background-color: var(--white);
   transition: right 0.3s linear;
@@ -12,7 +14,7 @@
 }
 
 @keyframes fadeIn {
-  from { right: -22.5rem; }
+  from { right: -40vw; }
   to { right: 0; }
 }
 
