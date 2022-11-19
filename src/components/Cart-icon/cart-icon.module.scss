@@ -6,15 +6,14 @@
 
 .cart_icon_svg {
   cursor: pointer;
-}
+  & path {
+    fill: var(--blue-grayish-dark);
+    transition: fill 250ms ease-out;
+  }
 
-.cart_icon_svg path {
-  fill: var(--blue-grayish-dark);
-  transition: fill 250ms ease-out;
-}
-
-.cart_icon_svg:hover path {
-  fill: var(--black);
+  &:hover path {
+    fill: var(--orange);
+  }
 }
 
 .cart_icon_count {

@@ -7,7 +7,7 @@ import { MouseEventHandler, useState } from 'react';
 import { ReactComponent as CartIconSvg } from '../../assets/images/icon-cart.svg';
 import Icon from '../Icon/icon.component';
 // styles
-import styles from './cart-icon.module.css';
+import styles from './cart-icon.module.scss';
 
 type CartIconType = {
   onCartIconClick: MouseEventHandler<HTMLDivElement>;

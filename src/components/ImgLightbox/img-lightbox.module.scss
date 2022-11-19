@@ -40,18 +40,18 @@
    cursor: pointer;
  }
 
- .next {
-   position: absolute;
-   top: 50%;
-   right: 2rem;
-   color: var(--white);
-   cursor: pointer;
+.next,
+.prev {
+  position: absolute;
+  top: 50%;
+  color: var(--white);
+  cursor: pointer;
  }
 
- .prev {
-   position: absolute;
-   top: 50%;
-   left: 2rem;
-   color: var(--white);
-   cursor: pointer;
- }
+.next {
+  right: 2rem;
+}
+
+.prev {
+  left: 2rem;
+}

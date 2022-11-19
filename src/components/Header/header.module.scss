@@ -96,8 +96,9 @@
     transition: color 250ms ease-out;
   }
   
+  &__cart:hover span,
   &__search:hover span {
-    color: var(--black);
+    color: var(--orange);
   }
 }
 

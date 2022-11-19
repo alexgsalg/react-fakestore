@@ -7,7 +7,7 @@ import Icon from '../Icon/icon.component';
 // imports
 // images
 // styles
-import styles from './img-lightbox.module.css';
+import styles from './img-lightbox.module.scss';
 
 type LightboxType = {
   img: string | undefined;

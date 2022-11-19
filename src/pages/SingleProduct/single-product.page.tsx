@@ -5,16 +5,14 @@ import { Navigate, useParams } from 'react-router-dom';
 // components
 import Icon from '../../components/Icon/icon.component';
 import Button from '../../components/Button/button.component';
+import ImgLightbox from '../../components/ImgLightbox/img-lightbox.component';
 // imports
 import { ProductType } from '../../models/products.model';
 import { getProductById } from '../../services/core.services';
 // images
-import { ReactComponent as MinusIcon } from '/src/assets/images/icon-minus.svg';
-import { ReactComponent as PlusIcon } from '/src/assets/images/icon-plus.svg';
 import { ReactComponent as CartIcon } from '/src/assets/images/icon-cart.svg';
 // styles
-import styles from './single-product.module.css';
-import ImgLightbox from '../../components/ImgLightbox/img-lightbox.component';
+import styles from './single-product.module.scss';
 
 const SingleProduct = () => {
   const params = useParams();

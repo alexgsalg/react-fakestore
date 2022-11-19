@@ -67,11 +67,11 @@ const Header = () => {
           </div>
         </div>
         <div className={styles.header_actions}>
-          <div className={styles.header_actions__cart}>
-            <CartIcon onCartIconClick={toggleCart} />
-          </div>
           <div className={styles.header_actions__search}>
             <Icon iconName='search' />
+          </div>
+          <div className={styles.header_actions__cart}>
+            <CartIcon onCartIconClick={toggleCart} />
           </div>
         </div>
       </div>
