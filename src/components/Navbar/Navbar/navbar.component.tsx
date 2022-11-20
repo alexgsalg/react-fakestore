@@ -17,9 +17,7 @@ const Navbar = ({ mobileMenu }: NavbarProps) => {
   return (
     <nav className={styles.header_navbar} onClick={mobileMenu}>
       {routeToShow
-        ? routeToShow.map((route, idx) => (
-            <NavbarItem dataName={route} key={idx} activeClassName='active' />
-          ))
+        ? routeToShow.map((route, idx) => <NavbarItem dataName={route} key={idx} />)
         : null}
     </nav>
   );

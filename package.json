@@ -9,9 +9,10 @@
     "preview": "vite preview",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
-    "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
-    "lint:fix": "eslint --fix src/**/*.{js,jsx,ts,tsx,json}",
-    "prepare": "husky install"
+    "lint": "eslint --ext .ts,.tsx,.js,.jsx  ./src --no-error-on-unmatched-pattern",
+    "lint:fix": "eslint --ext .ts,.tsx,.js,.jsx  ./src --no-error-on-unmatched-pattern --quiet --fix",
+    "prepare": "husky install",
+    "commit": "git-cz"
   },
   "dependencies": {
     "@redux-devtools/core": "^3.13.1",
@@ -45,6 +46,7 @@
     "cz-conventional-changelog": "3.3.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.10",
@@ -61,11 +63,19 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npx lint-staged"
     }
   },
   "lint-staged": {
-    "*": "prettier --write"
+    "*.{ts,tsx,js,jsx}": [
+      "yarn run lint:fix",
+      "prettier --write",
+      "git add --force"
+    ],
+    "*.{scss,css}": [
+      "prettier --write",
+      "git add --force"
+    ]
   },
   "config": {
     "commitizen": {
