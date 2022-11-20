@@ -1,5 +1,10 @@
 // plugins
-import { Fragment, useCallback, useEffect, useState } from 'react';
+import {
+  Fragment,
+  useCallback,
+  useEffect,
+  // useState
+} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 // redux
 import { setCartOpenStatus } from '../../store/cart/cart.actions';
@@ -14,7 +19,7 @@ const CartDrawer = () => {
   const dispatch = useDispatch();
 
   const cartStatus: boolean = useSelector(selectCartStatus);
-  const [cartItems, setCartItems] = useState<[]>([]);
+  // const [cartItems, setCartItems] = useState<[]>([]);
 
   const delayCloseDrawer = () => {
     dispatch(setCartOpenStatus(!cartStatus));
@@ -40,11 +45,11 @@ const CartDrawer = () => {
           <h3 className={styles.drawer__title}>Cart</h3>
         </header>
         <div className={styles.drawer_body}>
-          {cartItems.length ? (
+          {/* {cartItems.length ? (
             'items'
-          ) : (
-            <span className={styles.empty_cart}>Your cart is empty</span>
-          )}
+          ) : ( */}
+          <span className={styles.empty_cart}>Your cart is empty</span>
+          {/* )} */}
         </div>
       </aside>
       <span

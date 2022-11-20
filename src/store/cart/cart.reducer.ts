@@ -1,5 +1,4 @@
 import { ActionType, CART_ACTION_TYPES } from './cart.types';
-import { ProductType } from '../../models/products.model';
 
 export const CART_INITIAL_STATE = {
   cartItems: [],

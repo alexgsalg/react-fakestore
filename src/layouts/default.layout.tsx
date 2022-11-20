@@ -9,7 +9,6 @@ import Header from '../components/Header/header.component';
 // styles
 
 const DefaultLayout = () => {
-
   return (
     <Fragment>
       <Header />

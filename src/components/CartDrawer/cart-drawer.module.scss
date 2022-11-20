@@ -14,8 +14,12 @@
 }
 
 @keyframes fadeIn {
-  from { right: -40vw; }
-  to { right: 0; }
+  from {
+    right: -40vw;
+  }
+  to {
+    right: 0;
+  }
 }
 
 .cart_drawer.cart_drawer_open {

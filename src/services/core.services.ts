@@ -5,7 +5,7 @@ export const getAllProducts = () => {
   return http.get<ProductType[]>('/products/');
 };
 
-export const getProductPaginated = (offset: number = 0, limit: number = 10) => {
+export const getProductPaginated = (offset = 0, limit = 10) => {
   return http.get<ProductType[]>(`/products?offset=${offset}&limit=${limit}`);
 };
 

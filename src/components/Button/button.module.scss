@@ -1,5 +1,4 @@
 .baseButton {
-
   padding: 15px 20px;
   background-color: var(--orange);
   border-radius: 8px;
@@ -8,7 +7,7 @@
   font: 700 1rem/1em var(--font-default);
   color: var(--white);
   transition: all 0.2s linear;
-  
+
   cursor: pointer;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */

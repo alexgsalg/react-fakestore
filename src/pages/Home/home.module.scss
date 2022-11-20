@@ -9,7 +9,7 @@
 }
 
 .product_display,
-.product_info  {
+.product_info {
   flex: 1;
 }
 
@@ -55,7 +55,8 @@
   opacity: 0.5;
 }
 
-.product_info { }
+.product_info {
+}
 
 .product__store {
   display: inline-block;
@@ -95,9 +96,9 @@
   top: -0.1875rem;
   display: inline-block;
   margin-left: 1rem;
-  padding: .3125rem .5rem;
+  padding: 0.3125rem 0.5rem;
   background-color: var(--orange-light);
-  border-radius: .375rem;
+  border-radius: 0.375rem;
   font: 700 1rem/1em var(--font-default);
   color: var(--orange);
   letter-spacing: 0.05rem;

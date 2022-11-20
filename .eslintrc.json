@@ -18,13 +18,14 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier", "react-hooks"],
   "rules": {
-    "plugin:react/jsx-runtime": "extends",
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
     "camelcase": "warn",
-    "spaced-comment": "error",
+    "spaced-comment": "off",
     "quotes": ["error", "single"],
     "no-duplicate-imports": "error",
-    "object-curly-spacing": ["always"]
+    "object-curly-spacing": ["off"]
   }
 }

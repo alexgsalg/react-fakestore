@@ -9,12 +9,10 @@ import styles from './navbar-item.module.scss';
 
 interface NavigationItemProps {
   dataName: string;
-  activeClassName: string;
   [x: string]: any; //temporary variable
 }
 
-const NavbarItem = ({ dataName, activeClassName, ...props }: NavigationItemProps) => {
-  const activeClass = 'active';
+const NavbarItem = ({ dataName, ...props }: NavigationItemProps) => {
   return (
     <NavLink
       to={`/${dataName.toLowerCase() !== 'home' ? dataName.toLowerCase() : ''}`}

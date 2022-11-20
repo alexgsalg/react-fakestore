@@ -1,0 +1,9 @@
+vite.config.ts
+tsconfig.json
+tsconfig.node.json
+
+.husky/*
+
+*.d.ts
+src/_mock_
+src/_types_
