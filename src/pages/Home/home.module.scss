@@ -1,5 +1,8 @@
+@import '../../assets/sass/mixins.scss';
+@import '../../assets/sass/helpers';
+
 .wrapper {
-  composes: wrapper from '/src/index.css';
+  @extend .wrapper;
 
   display: flex;
   justify-content: space-between;
