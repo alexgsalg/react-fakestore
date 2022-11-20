@@ -1,7 +1,10 @@
+@import '../../assets/sass/helpers.scss';
+
 .cart_icon_container {
   position: relative;
   width: 1.563rem;
   height: 1.563rem;
+  color: var(--white);
 }
 
 .cart_icon_svg {
@@ -19,11 +22,14 @@
 .cart_icon_count {
   position: absolute;
   inset: -0.35rem auto auto 40%;
+  @extend .flex_center;
+  min-width: 1.0625rem;
+  height: 1.0625rem;
   padding: 0.125rem 0.3rem 0.11rem;
   background-color: var(--orange);
   border-radius: 50%;
-  color: var(--white);
-  font: 0.625rem/1em var(--font-single);
+  color: var(--white) !important;
+  font: 0.625rem/1em var(--font-default);
   font-weight: 700;
   pointer-events: none;
 }

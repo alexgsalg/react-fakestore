@@ -19,7 +19,7 @@ const CartIcon = ({ onCartIconClick }: CartIconType) => {
   return (
     <div className={styles.cart_icon_container} onClick={onCartIconClick}>
       <CartIconSvg className={styles.cart_icon_svg} />
-      <span className={styles.cart_icon_count}>0</span>
+      <span className={styles.cart_icon_count}>1</span>
     </div>
   );
 };

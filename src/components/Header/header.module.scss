@@ -84,7 +84,7 @@
   &__cart,
   &__search {
     position: relative;
-    @extend .flex_Jcenter_Acenter;
+    @extend .flex_center;
 
     padding: 0.3rem;
     cursor: pointer;
