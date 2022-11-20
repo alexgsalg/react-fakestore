@@ -1,9 +1,9 @@
 {
-  "src/**/*.+(js|json|ts|tsx)": [
-    "eslint",
+  "*.{ts,tsx,js,jsx}": [
+    "yarn run lint:fix",
     "git add --force"
   ],
-  "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+  "*.{js,jsx,ts,tsx,json,css,scss,md}": [
     "prettier --write",
     "git add --force"
   ]
