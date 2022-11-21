@@ -30,8 +30,8 @@ const Home = () => {
         </div>
       </section>
       <section id='showcase' className={styles.basic_section}>
-        <SectionHeader title='Some Random' subtext='Products' dataText='showcase' />
         <div className={styles.wrapper}>
+          <SectionHeader title='Some Random' subtext='Products' dataText='showcase' />
           {store.map((item) => (
             <div key={item.id}>{item.title}</div>
           ))}

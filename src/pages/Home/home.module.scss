@@ -17,6 +17,7 @@
   background-size: auto 110vh;
 
   &_wrapper {
+    @extend .wrapper;
     position: relative;
     width: 100%;
     margin-bottom: 10vh;
