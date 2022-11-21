@@ -2,6 +2,7 @@
 import { Fragment, useEffect, useState } from 'react';
 // redux
 // components
+import SectionHeader from '../../components/SectionHeader/section-header.component';
 // imports
 import { ProductType } from '../../models/products.model';
 import { getProductPaginated } from '../../services/core.services';
@@ -29,11 +30,7 @@ const Home = () => {
         </div>
       </section>
       <section id='showcase' className={styles.basic_section}>
-        <div className={styles.section_header}>
-          <h2 className={styles.section_header__title}>some random</h2>
-          <p className={styles.section_header__subtext}>Products</p>
-          <span className={styles.section_header__bgtext}>showcase</span>
-        </div>
+        <SectionHeader title='Some Random' subtext='Products' dataText='showcase' />
         <div className={styles.wrapper}>
           {store.map((item) => (
             <div key={item.id}>{item.title}</div>
