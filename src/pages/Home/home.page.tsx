@@ -1,5 +1,6 @@
 // plugins
 import { Fragment, useEffect, useState } from 'react';
+import ProductCard from '../../components/ProductCard/product-card.component';
 // redux
 // components
 import SectionHeader from '../../components/SectionHeader/section-header.component';
@@ -22,7 +23,7 @@ const Home = () => {
 
   return (
     <Fragment>
-      <section id='hero' className={styles.hero}>
+      <section id='hero' className={styles.hero} aria-label='hero section'>
         <div className={styles.hero_wrapper}>
           <span className={styles.hero__detail}>Not real</span>
           <h1 className={styles.hero__title}>The best random items</h1>
@@ -30,10 +31,11 @@ const Home = () => {
         </div>
       </section>
       <section id='showcase' className={styles.basic_section}>
+        <SectionHeader title='Some Random' subtext='Products' dataText='showcase' />
         <div className={`${styles.wrapper} ${styles.grid_layout}`}>
-          <SectionHeader title='Some Random' subtext='Products' dataText='showcase' />
           {store.map((item) => (
-            <div key={item.id}>{item.title}</div>
+            <ProductCard key={item.id} data={item} />
+            // <article>{item.title}</article>
           ))}
         </div>
       </section>

@@ -1,7 +1,12 @@
+export type ProductCardProps = {
+  data: ProductType;
+  clickAction?: () => void;
+};
+
 export type ProductType = {
   id: number;
   title: string;
-  store: string;
+  store?: string;
   description: string;
   price: number;
   category: CategoryType;
