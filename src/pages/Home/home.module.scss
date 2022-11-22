@@ -60,7 +60,7 @@
   padding: 0 1.25rem;
 }
 
-.grip_layout {
+.grid_layout {
   display: grid;
   gap: 1rem;
 }
@@ -71,9 +71,15 @@
 @include responsive(phone-large) {
 }
 
+@include responsive(tablet) {
+  .grid_layout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @include responsive(display-low) {
-  .grip_layout {
-    grid-template-columns: repeat();
+  .grid_layout {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -81,6 +87,9 @@
   .hero {
     justify-content: center;
     background-size: cover;
+  }
+  .grid_layout {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 

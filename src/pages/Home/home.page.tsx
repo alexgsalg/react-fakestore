@@ -30,7 +30,7 @@ const Home = () => {
         </div>
       </section>
       <section id='showcase' className={styles.basic_section}>
-        <div className={styles.wrapper}>
+        <div className={`${styles.wrapper} ${styles.grid_layout}`}>
           <SectionHeader title='Some Random' subtext='Products' dataText='showcase' />
           {store.map((item) => (
             <div key={item.id}>{item.title}</div>

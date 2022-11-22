@@ -84,6 +84,9 @@
   }
 }
 
+@include responsive(tablet) {
+}
+
 @include responsive(display-low) {
 }
 

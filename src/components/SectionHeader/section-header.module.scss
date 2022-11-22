@@ -51,6 +51,9 @@
   }
 }
 
+@include responsive(tablet) {
+}
+
 @include responsive(display-low) {
   .section_header {
     padding: 4rem 0;
