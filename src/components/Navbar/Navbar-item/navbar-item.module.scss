@@ -27,7 +27,7 @@
 /*=============================================================================
   Responsive Styles
 =============================================================================*/
-@include responsive(displaylow) {
+@include responsive(display-low) {
   .header_menu__item {
     padding: 1.2rem 0.7rem 1.2rem;
     color: var(--blue-grayish-dark);

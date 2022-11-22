@@ -11,7 +11,7 @@
 /*=============================================================================
   Responsive Styles
 =============================================================================*/
-@include responsive(displaylow) {
+@include responsive(display-low) {
   .header_navbar {
     flex-direction: row;
     justify-content: flex-start;

@@ -60,20 +60,29 @@
   padding: 0 1.25rem;
 }
 
+.grip_layout {
+  display: grid;
+  gap: 1rem;
+}
+
 /*=============================================================================
   Responsive Styles
 =============================================================================*/
-@include responsive(tablet) {
+@include responsive(phone-large) {
 }
 
-@include responsive(displaylow) {
-}
-
-@include responsive(displaymid) {
-  .hero {
-    justify-content: center;
+@include responsive(display-low) {
+  .grip_layout {
+    grid-template-columns: repeat();
   }
 }
 
-@include responsive(displaylarge) {
+@include responsive(display-mid) {
+  .hero {
+    justify-content: center;
+    background-size: cover;
+  }
+}
+
+@include responsive(display-large) {
 }

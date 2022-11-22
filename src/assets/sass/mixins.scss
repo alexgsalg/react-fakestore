@@ -1,20 +1,25 @@
 @mixin responsive($breakpoint) {
-  @if $breakpoint == tablet {
+  @if $breakpoint == phone-large {
     @media screen and (min-width: 481px) {
       @content;
     }
   }
-  @if $breakpoint == displaylow {
+  @if $breakpoint == tablet {
+    @media screen and (min-width: 600px) {
+      @content;
+    }
+  }
+  @if $breakpoint == display-low {
     @media screen and (min-width: 800px) {
       @content;
     }
   }
-  @if $breakpoint == displaymid {
+  @if $breakpoint == display-mid {
     @media screen and (min-width: 1025px) {
       @content;
     }
   }
-  @if $breakpoint == displaylarge {
+  @if $breakpoint == display-large {
     @media screen and (min-width: 1201) {
       @content;
     }

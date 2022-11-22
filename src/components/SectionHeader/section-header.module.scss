@@ -43,7 +43,7 @@
 /*=============================================================================
   Responsive Styles
 =============================================================================*/
-@include responsive(tablet) {
+@include responsive(phone-large) {
   .section_header {
     &::before {
       top: 66%;
@@ -51,7 +51,7 @@
   }
 }
 
-@include responsive(displaylow) {
+@include responsive(display-low) {
   .section_header {
     padding: 4rem 0;
     &::before {
@@ -66,7 +66,7 @@
   }
 }
 
-@include responsive(displaymid) {
+@include responsive(display-mid) {
   .section_header {
     padding: 4rem 0;
     &::before {
@@ -75,5 +75,5 @@
   }
 }
 
-@include responsive(displaylarge) {
+@include responsive(display-large) {
 }

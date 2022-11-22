@@ -68,7 +68,7 @@
 /*=============================================================================
   Responsive Styles
 =============================================================================*/
-@include responsive(tablet) {
+@include responsive(phone-large) {
   .cart_drawer {
     inset: 0 -40vw 0 auto;
     width: clamp(300px, 40vw, 350px);
@@ -84,11 +84,11 @@
   }
 }
 
-@include responsive(displaylow) {
+@include responsive(display-low) {
 }
 
-@include responsive(displaymid) {
+@include responsive(display-mid) {
 }
 
-@include responsive(displaylarge) {
+@include responsive(display-large) {
 }
