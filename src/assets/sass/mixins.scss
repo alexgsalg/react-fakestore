@@ -28,6 +28,7 @@
   }
 }
 
+//Flexbox mixin
 @mixin flex($justify, $align, $wrap: nowrap) {
   display: -webkit-box;
   display: -moz-box;

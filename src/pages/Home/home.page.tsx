@@ -8,21 +8,32 @@ import ProductCard from '../../components/ProductCard/product-card.component';
 import SectionHeader from '../../components/SectionHeader/section-header.component';
 // imports
 import { ProductType } from '../../models/products.model';
-import api from '../../services/core.services';
-// import { getProductPaginated } from '../../services/core.services';
+import productApi from '../../services/product.services';
+// import { CategoryType } from '../../models/categories.model';
+import categoriesApi from '../../services/categories.services';
 // images
 // styles
 import styles from './home.module.scss';
 
 const Home = () => {
   const [store, setStore] = useState<ProductType[]>([]);
+  const [bestSell, setBestSell] = useState<ProductType[]>([]);
+  // const [categories, setCategories] = useState<CategoryType[]>([]);
 
   useEffect(() => {
-    api.getProductPaginated(0, 4).then((res) => {
-      console.log(res.data);
-      setStore(res.data);
+    productApi.getProductPaginated(0, 10).then((res) => {
+      console.log('Products: ', res.data);
+      setStore(res.data.slice(0, 4));
+      setBestSell(res.data.slice(4, 10));
     });
   }, []);
+
+  // useEffect(() => {
+  //   categoriesApi.getAllCategories().then((res) => {
+  //     console.log('Categories: ', res.data);
+  //     setCategories(res.data);
+  //   });
+  // }, []);
 
   return (
     <Fragment>
@@ -71,8 +82,18 @@ const Home = () => {
           </article>
         </div>
       </section>
+
+      <section id='best-sellers' className={styles.basic_section}>
+        <SectionHeader title='Best Sellers' subtext='For some reason' dataText='products' />
+        <div className={`${styles.wrapper} ${styles.bestseller_grid}`}>
+          {bestSell.map((item) => (
+            // TODO: Add action to redirect
+            <ProductCard key={item.id} data={item} className={styles.bestseller__item} />
+          ))}
+        </div>
+      </section>
     </Fragment>
   );
-};
+};;;;;;;;
 
 export default Home;

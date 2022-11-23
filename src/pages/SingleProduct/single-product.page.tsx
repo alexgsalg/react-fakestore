@@ -8,7 +8,7 @@ import Button from '../../components/Button/button.component';
 import ImgLightbox from '../../components/ImgLightbox/img-lightbox.component';
 // imports
 import { ProductType } from '../../models/products.model';
-import api from '../../services/core.services';
+import productApi from '../../services/product.services';
 // images
 import { ReactComponent as CartIcon } from '/src/assets/images/icon-cart.svg';
 // styles
@@ -23,7 +23,7 @@ const SingleProduct = () => {
 
   useEffect(() => {
     if (!params?.id) return;
-    api.getProductById(params?.id).then((res) => {
+    productApi.getProductById(params?.id).then((res) => {
       setProduct(res.data);
       setSelectedImage(res.data.images[0]);
     });

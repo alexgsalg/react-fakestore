@@ -7,7 +7,7 @@ import { ProductCardProps } from '../../models/products.model';
 // styles
 import styles from './product-card.module.scss';
 
-const ProductCard = ({ data, clickAction }: ProductCardProps) => {
+const ProductCard = ({ data, clickAction, className }: ProductCardProps) => {
   const [rating, setRating] = useState(0);
 
   useEffect(() => {
@@ -21,7 +21,9 @@ const ProductCard = ({ data, clickAction }: ProductCardProps) => {
 
   const { id, title, price, images } = data;
   return (
-    <article className={styles.product} onClick={onClickAction}>
+    <article
+      className={`${styles.product} ${className ? className : null}`}
+      onClick={onClickAction}>
       <figure className={styles.product__image}>
         <img src={images[0]} alt={`Product ${title}`} />
       </figure>

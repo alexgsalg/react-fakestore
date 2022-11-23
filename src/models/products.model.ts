@@ -1,7 +1,10 @@
+import { CategoryType } from './categories.model';
+
 export type ProductCardProps = {
   data: ProductType;
   clickAction?: () => void;
   isHorizontal?: boolean;
+  className?: CSSModuleClasses | string;
 };
 
 export type ProductType = {
@@ -12,10 +15,4 @@ export type ProductType = {
   price: number;
   category: CategoryType;
   images: string[];
-};
-
-export type CategoryType = {
-  id: string;
-  name: string;
-  image: string;
 };

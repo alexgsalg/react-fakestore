@@ -54,7 +54,8 @@
   }
 }
 
-.basic_section {
+.basic_section,
+.odd_section {
   padding: 2rem 1.25rem;
 }
 
@@ -132,6 +133,22 @@
   }
 }
 
+.bestseller {
+  &_grid {
+    @extend %grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  &__item {
+    &:nth-child(-n+2) {
+      grid-column: span 2;
+      figure {
+        aspect-ratio: 2 / 1 !important;
+      }
+    }
+  }
+}
+
 /*=============================================================================
   Responsive Styles
 =============================================================================*/
@@ -142,11 +159,24 @@
   .home_cta_grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .bestseller_grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 @include responsive(display-low) {
   .grid_layout {
     grid-template-columns: repeat(4, 1fr);
+  }
+  .bestseller_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .bestseller__item,
+  .bestseller__item:nth-child(-n+2) {
+    grid-column: span 1;
+    figure {
+      aspect-ratio: 2/1;
+    }
   }
 }
 
