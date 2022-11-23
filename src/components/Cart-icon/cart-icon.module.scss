@@ -1,3 +1,4 @@
+@import '../../assets/sass/mixins.scss';
 @import '../../assets/sass/helpers.scss';
 
 .cart_icon_container {
@@ -22,7 +23,7 @@
 .cart_icon_count {
   position: absolute;
   inset: -0.35rem auto auto 40%;
-  @extend .flex_center;
+  @include flex(center, center);
   min-width: 1.0625rem;
   height: 1.0625rem;
   padding: 0.125rem 0.3rem 0.11rem;

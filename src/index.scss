@@ -32,38 +32,6 @@
   --trs-fast: 250ms;
 }
 
-/* Helper Classes */
-.wrapper {
-  max-width: 1110px;
-  width: 100%;
-  margin-inline: auto;
-}
-
-.not_clicable {
-  pointer-events: none;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
-}
-
-.flex_Jstart_Acenter {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.flex_center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.flex_Jend_Acenter {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
 /* Reset */
 * {
   margin: 0;

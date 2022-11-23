@@ -77,14 +77,14 @@
 
 .header_actions {
   grid-area: actions;
-  @extend .flex_Jend_Acenter;
+  @include flex(flex-end, center);
 
   gap: 0.5rem;
 
   &__cart,
   &__search {
     position: relative;
-    @extend .flex_center;
+    @include flex(center, center);
 
     padding: 0.3rem;
     cursor: pointer;

@@ -1,0 +1,45 @@
+@import '../../assets/sass/mixins.scss';
+@import '../../assets/sass/helpers';
+
+.product {
+  @include flex(stretch, flex-start);
+  flex-direction: column;
+
+  &__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+  }
+
+  &__title {
+    font-size: clamp(14px, 4vw, 16px);
+    margin-top: 0.5rem;
+    line-height: 1.3em;
+  }
+
+  &__price {
+    font-size: clamp(16px, 5vw, 18px);
+    margin-top: -0.5rem;
+  }
+}
+
+/*=============================================================================
+  Responsive Styles
+=============================================================================*/
+@include responsive(phone-large) {
+}
+
+@include responsive(tablet) {
+}
+
+@include responsive(display-low) {
+}
+
+@include responsive(display-mid) {
+}
+
+@include responsive(display-large) {
+}

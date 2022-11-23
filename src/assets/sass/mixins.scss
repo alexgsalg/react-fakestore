@@ -1,3 +1,5 @@
+// Autoprefix CSS: https://autoprefixer.github.io
+
 @mixin responsive($breakpoint) {
   @if $breakpoint == phone-large {
     @media screen and (min-width: 481px) {
@@ -24,4 +26,77 @@
       @content;
     }
   }
+}
+
+@mixin flex($justify, $align, $wrap: nowrap) {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  @if $justify {
+    @include justify-content($justify);
+  }
+  @if $align {
+    @include align-items($align);
+  }
+  @if not $wrap == nowrap {
+    @include flex-wrap($wrap);
+  }
+}
+
+@mixin justify-content($value: flex-start) {
+  // flex-start | flex-end | center | space-between | space-around
+  @if $value == flex-start {
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -ms-flex-pack: start;
+  } @else if $value == flex-end {
+    -webkit-box-pack: end;
+    -moz-box-pack: end;
+    -ms-flex-pack: end;
+  } @else if $value == space-between {
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+  } @else if $value == space-around {
+    -ms-flex-pack: distribute;
+  } @else {
+    -webkit-box-pack: $value;
+    -moz-box-pack: $value;
+    -ms-flex-pack: $value;
+  }
+  -webkit-justify-content: $value;
+  justify-content: $value;
+}
+
+@mixin align-items($value: stretch) {
+  //flex-start | flex-end | center | baseline | stretch | space-between
+  @if $value == flex-start {
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -ms-flex-align: start;
+  } @else if $value == flex-end {
+    -webkit-box-align: end;
+    -moz-box-align: end;
+    -ms-flex-align: end;
+  } @else {
+    -webkit-box-align: $value;
+    -moz-box-align: $value;
+    -ms-flex-align: $value;
+  }
+  -webkit-align-items: $value;
+  align-items: $value;
+}
+
+@mixin flex-wrap($value: nowrap) {
+  // nowrap | wrap | wrap-reverse
+  -webkit-flex-wrap: $value;
+  @if $value == nowrap {
+    -ms-flex-wrap: none;
+  } @else {
+    -ms-flex-wrap: $value;
+  }
+  flex-wrap: $value;
 }

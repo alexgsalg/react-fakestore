@@ -1,6 +1,7 @@
 export type ProductCardProps = {
   data: ProductType;
   clickAction?: () => void;
+  isHorizontal?: boolean;
 };
 
 export type ProductType = {

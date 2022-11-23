@@ -16,6 +16,9 @@
     "commit": "git-cz"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.10.15",
     "@redux-devtools/core": "^3.13.1",
     "@reduxjs/toolkit": "^1.9.0",
     "@types/axios": "^0.14.0",
@@ -26,6 +29,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.4",
+    "react-simple-star-rating": "^5.1.7",
     "react-transition-group": "^4.4.5",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.2",
@@ -47,8 +51,8 @@
     "cz-conventional-changelog": "3.3.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.5.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",

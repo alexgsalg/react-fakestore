@@ -1,8 +1,8 @@
 /* Helper Classes */
 .wrapper {
-  max-width: 69.375rem;
+  max-width: 75rem;
   width: 100%;
-  margin-inline: auto;
+  margin-inline: auto !important;
 }
 
 .not_clicable {
@@ -10,22 +10,4 @@
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
-}
-
-.flex_Jstart_Acenter {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.flex_center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.flex_Jend_Acenter {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
 }

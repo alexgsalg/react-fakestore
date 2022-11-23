@@ -15,7 +15,7 @@ const Home = () => {
   const [store, setStore] = useState<ProductType[]>([]);
 
   useEffect(() => {
-    getProductPaginated().then((res) => {
+    getProductPaginated(0, 4).then((res) => {
       console.log(res.data);
       setStore(res.data);
     });

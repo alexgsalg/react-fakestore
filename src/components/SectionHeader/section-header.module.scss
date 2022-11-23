@@ -2,7 +2,7 @@
 @import '../../assets/sass/helpers';
 
 .section_header {
-  @extend .flex_center;
+  @include flex(center, center);
   flex-direction: column;
   position: relative;
   padding: 3rem 0;

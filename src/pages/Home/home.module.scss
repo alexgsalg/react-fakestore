@@ -3,9 +3,7 @@
 
 // HERO
 .hero {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
+  @include flex(flex-start, flex-end);
   width: 100vw;
   height: 60vh;
   padding: 0 1.25rem;
@@ -62,6 +60,7 @@
 
 .grid_layout {
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
 
@@ -72,24 +71,20 @@
 }
 
 @include responsive(tablet) {
-  .grid_layout {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @include responsive(display-low) {
   .grid_layout {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @include responsive(display-mid) {
   .hero {
     justify-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     background-size: cover;
-  }
-  .grid_layout {
-    grid-template-columns: repeat(4, 1fr);
   }
 }
 
