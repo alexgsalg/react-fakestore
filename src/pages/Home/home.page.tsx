@@ -6,7 +6,8 @@ import ProductCard from '../../components/ProductCard/product-card.component';
 import SectionHeader from '../../components/SectionHeader/section-header.component';
 // imports
 import { ProductType } from '../../models/products.model';
-import { getProductPaginated } from '../../services/core.services';
+import api from '../../services/core.services';
+// import { getProductPaginated } from '../../services/core.services';
 // images
 // styles
 import styles from './home.module.scss';
@@ -15,7 +16,7 @@ const Home = () => {
   const [store, setStore] = useState<ProductType[]>([]);
 
   useEffect(() => {
-    getProductPaginated(0, 4).then((res) => {
+    api.getProductPaginated(0, 4).then((res) => {
       console.log(res.data);
       setStore(res.data);
     });
