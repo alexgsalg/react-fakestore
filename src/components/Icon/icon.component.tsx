@@ -11,7 +11,7 @@ const Icon = ({ iconName, className, size, actionOnClick }: IconTypes) => {
   return (
     <span
       className={`material-icons ${className ? className : ''}`}
-      style={{ fontSize: size ? size : `${size}px` }}
+      style={{ fontSize: size ? `${size}px` : 'inherit' }}
       onClick={actionOnClick}>
       {iconName}
     </span>

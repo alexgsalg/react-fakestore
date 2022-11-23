@@ -1,24 +1,64 @@
-.baseButton {
-  padding: 15px 20px;
-  background-color: var(--orange);
-  border-radius: 8px;
+@import '../../assets/sass/mixins.scss';
+
+%button {
+  @include flex(center, center);
+  gap: 0.5rem;
+  border-radius: 6px;
   border: none;
   outline: none;
-  font: 700 1rem/1em var(--font-default);
-  color: var(--white);
   transition: all 0.2s linear;
-
   cursor: pointer;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
+
+  & > [class^='material-icons'] {
+    display: inline-block;
+    margin-left: -4px;
+  }
 }
 
-.baseButton:hover {
+.size_small {
+  padding: 12px 16px;
+  font: 400 18px/1.2em var(--font-default);
+
+  @include responsive(display-low) {
+    padding: 10px 12px;
+    font: 400 14px/1.2em var(--font-default);
+  }
+}
+
+.size_medium {
+  padding: 16px 20px;
+  font: 400 22px/1.2em var(--font-default);
+
+  @include responsive(display-low) {
+    padding: 14px 18px;
+    font: 400 1rem/1.2em var(--font-default);
+  }
+}
+
+.size_large {
+  padding: 20px 24px;
+  font: 400 24px/1.2em var(--font-default);
+
+  @include responsive(display-low) {
+    padding: 18px 26px;
+    font: 400 18px/1.2em var(--font-default);
+  }
+}
+
+.type_base {
+  @extend %button;
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.type_base:hover {
   background-color: var(--orange-dark);
-  box-shadow: 5px 5px 20px 9px hsla(26, 100%, 55%, 0.15);
+  // box-shadow: 5px 5px 20px 9px hsla(26, 100%, 55%, 0.15);
 }
 
-.baseButton path {
+.type_base path {
   fill: var(--white);
 }

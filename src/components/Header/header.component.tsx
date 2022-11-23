@@ -68,7 +68,7 @@ const Header = () => {
         </div>
         <div className={styles.header_actions}>
           <div className={styles.header_actions__search}>
-            <Icon iconName='search' />
+            <Icon iconName='search' size={26} />
           </div>
           <div className={styles.header_actions__cart}>
             <CartIcon onCartIconClick={toggleCart} />
