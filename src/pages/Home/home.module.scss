@@ -55,13 +55,81 @@
 }
 
 .basic_section {
-  padding: 0 1.25rem;
+  padding: 2rem 1.25rem;
+}
+
+%grid {
+  display: grid;
+  gap: 1rem;
 }
 
 .grid_layout {
-  display: grid;
+  @extend %grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+}
+
+.home_cta {
+  &_grid {
+    @extend %grid;
+    grid-template-columns: 1fr;
+  }
+
+  &__item {
+    position: relative;
+    padding: 1.5rem 1rem;
+    color: var(--white);
+    @include flex(flex-start, flex-start);
+    flex-direction: column;
+    gap: 0.5rem;
+    overflow: hidden;
+
+    // FIRST Item
+    &:first-child {
+    }
+    &:first-child::before {
+      position: absolute;
+      content: '';
+      inset: 0;
+      background-image: linear-gradient(
+          to bottom right,
+          hsla(0, 0%, 0%, 0.75),
+          hsla(220, 13%, 13%, 0.5)
+        ),
+        url('https://api.lorem.space/image/watch?w=640&h=480&r=101');
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: all ease var(--trs-fast);
+      z-index: -1;
+    }
+
+    &:first-child:hover::before,
+    &:last-child:hover::before {
+      filter: blur(1px);
+      -webkit-filter: blur(1px);
+      transform: scale(1.1);
+    }
+
+    // LAST Item
+    &:last-child {
+      position: relative;
+      overflow: hidden;
+    }
+    &:last-child::before {
+      position: absolute;
+      content: '';
+      inset: 0;
+      background-image: linear-gradient(
+          to bottom right,
+          hsla(26, 86%, 48%, 0.9),
+          hsla(0, 0%, 0%, 0.75)
+        ),
+        url('https://api.lorem.space/image/furniture?w=640&h=480&r=7110');
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: all ease var(--trs-fast);
+      z-index: -1;
+    }
+  }
 }
 
 /*=============================================================================
@@ -71,6 +139,9 @@
 }
 
 @include responsive(tablet) {
+  .home_cta_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @include responsive(display-low) {

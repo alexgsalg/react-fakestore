@@ -43,35 +43,30 @@ const Home = () => {
         </div>
       </section>
 
-      <section id='cta-split' className={styles.split_section}>
-        <div className={`${styles.wrapper} ${styles.grid_half}`}>
-          <article>
+      <section id='cta-split' className={styles.basic_section}>
+        <div className={`${styles.wrapper} ${styles.home_cta_grid}`}>
+          <article className={styles.home_cta__item}>
             <small>20% OFF</small>
             <h3>Useless items that you will never use</h3>
             <Button
               text='Buy now'
               buttonType='base'
               size='sm'
+              // TODO: insert funny action
               action={() => alert('HAHA you fool')}
               iconBefore={<Icon iconName='sell' size={16} />}
             />
           </article>
-          <article>
+          <article className={styles.home_cta__item}>
             <small>Random deals</small>
             <h3>Test your luck and buy a random item</h3>
             <Button
               text='Buy now'
               buttonType='base'
-              size='md'
+              size='sm'
+              // TODO: insert funny action
               action={() => alert('You got a golf pin')}
               iconBefore={<Icon iconName='sell' size={16} />}
-            />
-            <Button
-              text='Buy now'
-              buttonType='base'
-              size='lg'
-              action={() => alert('HAHA you fool')}
-              iconBefore={<Icon iconName='sell' />}
             />
           </article>
         </div>
