@@ -1,21 +1,20 @@
 @import '../../assets/sass/mixins.scss';
 
 .cart_drawer {
-  position: fixed;
+  position: absolute;
   display: flex;
   flex-direction: column;
-  inset: 0 -82vw 0 auto;
-  width: clamp(300px, 82vw, 350px);
-  min-height: 16.25rem;
+  inset: 0 -100vw 0 auto;
+  width: clamp(250px, 82vw, 350px);
+  height: 100vh;
   background-color: var(--white);
   transition: right 0.3s linear;
-  z-index: 110;
+  z-index: 120;
 }
 
 @keyframes fadeIn {
   from {
-    right: -82vw;
-    // right: -40vw;
+    right: -100vw;
   }
   to {
     right: 0;
@@ -30,10 +29,12 @@
 .drawer_backlayer {
   position: absolute;
   inset: 0;
+  width: 100vw;
+  height: 100vh;
   background-color: transparent;
   transition: all 0.3s linear;
   pointer-events: none;
-  z-index: 100;
+  z-index: 119;
 }
 
 .drawer_backlayer.drawer_backlayer_open {

@@ -5,12 +5,12 @@
 .hero {
   @include flex(flex-start, flex-end);
   width: 100vw;
-  height: 60vh;
+  height: 550px;
+  max-height: 80vh;
   padding: 0 1.25rem;
   background-image: linear-gradient(hsla(26, 86%, 48%, 0.3), hsl(220, 13%, 13%, 0.8)),
     url('../../assets/images/hero/hero_bg_shoes_2.jpg');
-  background-position: 50% 125%;
-  background-attachment: fixed;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: auto 110vh;
 
@@ -85,6 +85,8 @@
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     background-size: cover;
+    height: 80vh;
+    max-height: unset;
   }
 }
 

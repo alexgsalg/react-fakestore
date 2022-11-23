@@ -2,9 +2,13 @@
 @import '../../assets/sass/mixins.scss';
 
 .header {
+  position: fixed;
+  inset: 0 0 auto;
   width: 100%;
   padding: 0.4rem 0.5rem;
+  background-color: var(--white);
   border-bottom: 1px solid var(--blue-grayish-opacity);
+  z-index: 200;
 }
 
 .header_container {
