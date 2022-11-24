@@ -1,4 +1,3 @@
-// plugins
 import { useEffect, useState } from 'react';
 import { Rating } from 'react-simple-star-rating';
 // components

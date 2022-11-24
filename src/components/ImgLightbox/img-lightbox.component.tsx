@@ -1,4 +1,3 @@
-// plugins
 import { MouseEventHandler } from 'react';
 import ReactDOM from 'react-dom';
 // redux

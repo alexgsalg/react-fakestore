@@ -1,4 +1,3 @@
-// plugins
 // components
 // imports
 import { SectionHeaderProps } from '../../models/structure-blocks.model';

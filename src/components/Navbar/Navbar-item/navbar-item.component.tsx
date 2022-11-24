@@ -1,4 +1,3 @@
-// plugins
 import { NavLink } from 'react-router-dom';
 // redux
 // components

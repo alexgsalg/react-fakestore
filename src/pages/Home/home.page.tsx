@@ -1,15 +1,14 @@
-// plugins
 import { Fragment, useEffect, useState } from 'react';
+// redux
+// components
 import Button from '../../components/Button/button.component';
 import Icon from '../../components/Icon/icon.component';
 import ProductCard from '../../components/ProductCard/product-card.component';
-// redux
-// components
 import SectionHeader from '../../components/SectionHeader/section-header.component';
 // imports
 import { ProductType } from '../../models/products.model';
 import productApi from '../../services/product.services';
-// import { CategoryType } from '../../models/categories.model';
+import { CategoryType } from '../../models/categories.model';
 import categoriesApi from '../../services/categories.services';
 // images
 // styles
@@ -94,6 +93,6 @@ const Home = () => {
       </section>
     </Fragment>
   );
-};;;;;;;;
+};
 
 export default Home;
