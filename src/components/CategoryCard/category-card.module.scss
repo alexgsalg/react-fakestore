@@ -1,0 +1,84 @@
+@import '../../assets/sass/mixins.scss';
+@import '../../assets/sass/helpers';
+
+.category {
+  position: relative;
+  @include flex(stretch, flex-start);
+  flex-direction: column;
+
+  &__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 8/3;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+    
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      transition: all ease var(--trs);
+      filter: saturate(0.4);
+    }
+
+    @at-root .category:hover & > img {
+      transform: scale(1.1);
+      filter: saturate(1);
+    }
+  }
+
+  &__title {
+    position: absolute;
+    inset: auto auto 0 0;
+    padding: 0.5rem;
+    width:fit-content;
+    background-color: var(--blue-darker);
+    color: var(--white);
+    font-size: clamp(14px, 4vw, 16px);
+    line-height: 1em;
+    transition: all ease var(--trs-fast);
+    z-index: 1;
+
+    &::before {
+      position: inherit;
+      inset: 0 auto 0 0;
+      width: 0;
+      background-color: var(--orange);
+      content: '';
+      transition: all ease var(--trs-fast);
+      z-index: -1;
+    }
+    @at-root .category:hover &::before {
+      width: 100%;
+    }
+  }
+}
+
+/*=============================================================================
+  Responsive Styles
+=============================================================================*/
+@include responsive(phone-large) {
+}
+
+@include responsive(tablet) {
+  .category {
+    &__image {
+      aspect-ratio: 6/3;
+    }
+  }
+}
+
+@include responsive(display-low) {
+  .category {
+    &__image {
+      aspect-ratio: 5/3;
+    }
+  }
+}
+
+@include responsive(display-mid) {
+}
+
+@include responsive(display-large) {
+}

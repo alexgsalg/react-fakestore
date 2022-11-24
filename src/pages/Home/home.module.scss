@@ -54,9 +54,15 @@
   }
 }
 
-.basic_section,
-.odd_section {
-  padding: 2rem 1.25rem;
+.section {
+  &_basic,
+  &_odd {
+    padding: 2rem 1.25rem;
+  }
+
+  &_odd {
+    background-color: var(--blue-grayish-light);
+  }
 }
 
 %grid {
@@ -149,10 +155,20 @@
   }
 }
 
+.categories {
+  &_grid {
+    @extend %grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 /*=============================================================================
   Responsive Styles
 =============================================================================*/
 @include responsive(phone-large) {
+  .categories_grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @include responsive(tablet) {
@@ -161,6 +177,9 @@
   }
   .bestseller_grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+  .categories_grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -177,6 +196,9 @@
     figure {
       aspect-ratio: 2/1;
     }
+  }
+  .categories_grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
