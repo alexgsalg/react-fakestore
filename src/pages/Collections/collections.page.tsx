@@ -1,8 +1,7 @@
 // redux
 // components
 // imports
-// images
-// styles
+// styles and images
 
 const Collections = () => {
   return <div>Collections.component</div>;

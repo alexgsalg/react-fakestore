@@ -10,8 +10,7 @@ import { ProductType } from '../../models/products.model';
 import productApi from '../../services/product.services';
 import { CategoryType } from '../../models/categories.model';
 import categoriesApi from '../../services/categories.services';
-// images
-// styles
+// styles and images
 import styles from './home.module.scss';
 
 const Home = () => {

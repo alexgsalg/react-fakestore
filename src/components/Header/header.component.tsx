@@ -10,8 +10,7 @@ import Navbar from '../Navbar/Navbar/navbar.component';
 import CartDrawer from '../CartDrawer/cart-drawer.component';
 import Icon from '../Icon/icon.component';
 // imports
-// images
-// styles
+// styles and images
 import styles from './header.module.scss';
 
 const Header = () => {

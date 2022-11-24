@@ -2,8 +2,7 @@ import { NavLink } from 'react-router-dom';
 // redux
 // components
 // imports
-// images
-// styles
+// styles and images
 import styles from './navbar-item.module.scss';
 
 interface NavigationItemProps {

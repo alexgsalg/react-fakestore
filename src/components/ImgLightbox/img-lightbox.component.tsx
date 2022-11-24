@@ -4,8 +4,7 @@ import ReactDOM from 'react-dom';
 // components
 import Icon from '../Icon/icon.component';
 // imports
-// images
-// styles
+// styles and images
 import styles from './img-lightbox.module.scss';
 
 type LightboxType = {

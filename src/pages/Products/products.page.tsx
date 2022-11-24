@@ -1,8 +1,7 @@
 // redux
 // components
 // imports
-// images
-// styles
+// styles and images
 
 const Products = () => {
   return <div>Men section.component</div>;

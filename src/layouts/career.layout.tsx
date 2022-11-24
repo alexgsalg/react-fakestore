@@ -4,8 +4,7 @@ import { Outlet } from 'react-router-dom';
 // components
 import Header from '../components/Header/header.component';
 // imports
-// images
-// styles
+// styles and images
 
 const CareerLayout = () => {
   return (

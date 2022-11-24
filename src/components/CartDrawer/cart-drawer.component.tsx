@@ -10,8 +10,7 @@ import { setCartOpenStatus } from '../../store/cart/cart.actions';
 import { selectCartStatus } from '../../store/cart/cart.selector';
 // components
 // imports
-// images
-// styles
+// styles and images
 import styles from './cart-drawer.module.scss';
 
 const CartDrawer = () => {

@@ -2,8 +2,7 @@
 // components
 import NavbarItem from '../Navbar-item/navbar-item.component';
 // imports
-// images
-// styles
+// styles and images
 import styles from './navbar.module.scss';
 
 type NavbarProps = {

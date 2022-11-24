@@ -1,8 +1,7 @@
 // redux
 // components
 // imports
-// images
-// styles
+// styles and images
 
 const Category = () => {
   return <div>Category.component</div>;

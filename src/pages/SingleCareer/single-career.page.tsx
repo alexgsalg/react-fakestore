@@ -1,8 +1,7 @@
 // redux
 // components
 // imports
-// images
-// styles
+// styles and images
 
 const SingleCareer = () => {
   return <div>SingleCareer.component</div>;
