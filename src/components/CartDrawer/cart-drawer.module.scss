@@ -71,17 +71,7 @@
 =============================================================================*/
 @include responsive(phone-large) {
   .cart_drawer {
-    inset: 0 -40vw 0 auto;
     width: clamp(300px, 40vw, 350px);
-  }
-
-  @keyframes fadeIn {
-    from {
-      right: -40vw;
-    }
-    to {
-      right: 0;
-    }
   }
 }
 

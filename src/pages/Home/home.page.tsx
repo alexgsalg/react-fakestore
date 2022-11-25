@@ -87,7 +87,12 @@ const Home = () => {
         <div className={`${styles.wrapper} ${styles.bestseller_grid}`}>
           {bestSell.map((item) => (
             // TODO: Add action to redirect
-            <ProductCard key={item.id} data={item} className={styles.bestseller__item} />
+            <ProductCard
+              key={item.id}
+              data={item}
+              isBestSeller={true}
+              className={styles.bestseller__item}
+            />
           ))}
         </div>
       </section>

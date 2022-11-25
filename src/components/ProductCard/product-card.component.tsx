@@ -6,11 +6,17 @@ import { ProductCardProps } from '../../models/products.model';
 // styles
 import styles from './product-card.module.scss';
 
-const ProductCard = ({ data, clickAction, className }: ProductCardProps) => {
-  const [rating, setRating] = useState(0);
+const ProductCard = ({
+  data,
+  clickAction,
+  className,
+  showRating = true,
+  isBestSeller = false,
+}: ProductCardProps) => {
+  const [randomRating, setRandomRating] = useState(0);
 
   useEffect(() => {
-    setRating(Math.floor(Math.random() * (5 - 1 + 1) + 1));
+    setRandomRating(Math.floor(Math.random() * (5 - 1 + 1) + 1));
   }, []);
 
   const onClickAction = () => {
@@ -27,13 +33,15 @@ const ProductCard = ({ data, clickAction, className }: ProductCardProps) => {
         <img src={images[0]} alt={`Product ${title}`} />
       </figure>
       <h3 className={styles.product__title}>{title}</h3>
-      <Rating
-        readonly={true}
-        allowFraction={true}
-        initialValue={rating}
-        fillColor='hsl(21, 100%, 62%)'
-        size={14}
-      />
+      {showRating ? (
+        <Rating
+          readonly={true}
+          allowFraction={true}
+          initialValue={isBestSeller ? 5 : randomRating}
+          fillColor='hsl(21, 100%, 62%)'
+          size={14}
+        />
+      ) : null}
       <p className={styles.product__price}>${price}</p>
     </article>
   );
