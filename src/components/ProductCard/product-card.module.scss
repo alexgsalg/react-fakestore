@@ -4,6 +4,7 @@
 .product {
   @include flex(stretch, flex-start);
   flex-direction: column;
+  cursor: pointer;
 
   &__image {
     display: block;
@@ -43,6 +44,17 @@
 }
 
 @include responsive(display-low) {
+  .product {
+    &__image {
+      aspect-ratio: 5/3;
+      filter: saturate(0.4);
+    
+      @at-root .product:hover & > img {
+        transform: scale(1.1);
+        filter: saturate(1);
+      }
+    }
+  }
 }
 
 @include responsive(display-mid) {

@@ -19,13 +19,13 @@
       width: 100%;
       object-fit: cover;
       transition: all ease var(--trs);
-      filter: saturate(0.4);
+      // filter: saturate(0.4);
     }
 
-    @at-root .category:hover & > img {
-      transform: scale(1.1);
-      filter: saturate(1);
-    }
+    // @at-root .category:hover & > img {
+    //   transform: scale(1.1);
+    //   filter: saturate(1);
+    // }
   }
 
   &__title {
@@ -49,9 +49,9 @@
       transition: all ease var(--trs-fast);
       z-index: -1;
     }
-    @at-root .category:hover &::before {
-      width: 100%;
-    }
+    // @at-root .category:hover &::before {
+    //   width: 100%;
+    // }
   }
 }
 
@@ -73,6 +73,17 @@
   .category {
     &__image {
       aspect-ratio: 5/3;
+      filter: saturate(0.4);
+    
+      @at-root .category:hover & > img {
+        transform: scale(1.1);
+        filter: saturate(1);
+      }
+    }
+    &__title {
+      @at-root .category:hover &::before {
+        width: 100%;
+      }
     }
   }
 }
