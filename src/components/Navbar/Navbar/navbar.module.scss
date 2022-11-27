@@ -1,11 +1,17 @@
 @import '../../../assets/sass/mixins.scss';
 
 .header_navbar {
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: clamp(200px, 66vw, 300px);
+  height: 100%;
   display: flex;
   flex-direction: column;
-  padding-top: 1rem;
   gap: 0.7rem;
-  height: 100%;
+  padding-top: 1rem;
+  background-color: var(--orange);
+  transition: right ease-in var(--trs-fast);
+  z-index: 110;
 }
 
 /*=============================================================================
@@ -13,11 +19,15 @@
 =============================================================================*/
 @include responsive(display-low) {
   .header_navbar {
+    position: relative;
+    inset: unset;
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
     gap: 2.0625rem;
     height: 100%;
     padding-top: 0;
+    width: 100%;
+    background-color: transparent;
   }
 }

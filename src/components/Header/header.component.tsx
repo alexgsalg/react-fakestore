@@ -48,9 +48,10 @@ const Header = () => {
         {/* Desktop Menu */}
         <div className={`${styles.header_menu} ${menuOpen ? styles.open : ''}`}>
           <Navbar mobileMenu={toggleMenu} />
+          {menuOpen ? <div className={styles.navmask} onClick={toggleMenu}></div> : null}
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - TODO: Transform in a component*/}
         <div className={styles.header_menu_icon} onClick={toggleMenu}>
           <div className={styles.menu_icon}>
             <input

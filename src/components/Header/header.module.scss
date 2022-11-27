@@ -67,14 +67,12 @@
 }
 
 .header_menu {
-  position: fixed;
   inset: 0 -70vw 0 auto;
-  width: clamp(200px, 66vw, 300px);
-  background-color: var(--orange);
-  z-index: 110;
-  transition: right ease-in var(--trs-fast);
 
-  &.open {
+  nav {
+    right: -70vw;
+  }
+  &.open nav {
     right: 0;
   }
 }
@@ -175,6 +173,16 @@
   }
 }
 
+.navmask {
+  position: fixed;
+  inset: 0;
+  z-index: 109;
+  background-color: hsla(0deg, 0%, 0%, 0.2);
+  @at-root .menu_icon__cheeckbox:checked & {
+    background-color: green;
+  }
+}
+
 /*=============================================================================
   Responsive Styles
 =============================================================================*/
@@ -190,10 +198,9 @@
 
   .header_menu {
     flex: 1;
-    position: relative;
-    width: unset;
-    inset: unset;
-    background-color: unset;
+    nav {
+      right: unset;
+    }
   }
 
   .header_menu_icon {
