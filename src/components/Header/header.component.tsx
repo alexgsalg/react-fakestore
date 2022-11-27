@@ -49,6 +49,7 @@ const Header = () => {
         <div className={`${styles.header_menu} ${menuOpen ? styles.open : ''}`}>
           <Navbar mobileMenu={toggleMenu} />
         </div>
+
         {/* Mobile Menu */}
         <div className={styles.header_menu_icon} onClick={toggleMenu}>
           <div className={styles.menu_icon}>
@@ -64,6 +65,7 @@ const Header = () => {
             </div>
           </div>
         </div>
+
         <div className={styles.header_actions}>
           <div className={styles.header_actions__search}>
             <Icon iconName='search' size={26} />
@@ -74,7 +76,7 @@ const Header = () => {
         </div>
       </div>
       {/* Cart Drawer */}
-      <CartDrawer />
+      {/* <CartDrawer /> */}
       {/* Search bar */}
     </header>
   );

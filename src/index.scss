@@ -40,8 +40,17 @@
   box-sizing: border-box;
 }
 
-#root {
-  overflow: hidden;
+#root,body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+div#cart_drawer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1000;
+  & > * {pointer-events: all;}
 }
 
 a {
