@@ -31,6 +31,7 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
+    setMenuOpen(false);
     document.addEventListener('keydown', handleEscKey, false);
     return () => {
       document.removeEventListener('keydown', handleEscKey, false);

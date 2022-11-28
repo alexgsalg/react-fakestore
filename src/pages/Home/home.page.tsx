@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useState } from 'react';
+import { useQuery } from 'react-query';
 // redux
 // components
 import Button from '../../components/Button/button.component';
@@ -19,13 +20,26 @@ const Home = () => {
   const [bestSell, setBestSell] = useState<ProductType[]>([]);
   const [categories, setCategories] = useState<CategoryType[]>([]);
 
+  const {
+    isLoading,
+    isSuccess,
+    isError,
+    data: storeList,
+  } = useQuery('store', async () => productApi.getProductPaginated(0, 10));
+
+  // const store = isLoading && ?? storeList.data
   useEffect(() => {
-    productApi.getProductPaginated(0, 10).then((res) => {
-      console.log('Products: ', res.data);
-      setStore(res.data.slice(0, 4));
-      setBestSell(res.data.slice(4, 10));
-    });
-  }, []);
+    const result = storeList?.data;
+    // productApi.getProductPaginated(0, 10).then((res) => {
+    console.log('Products: ', result);
+    // setStore(res.data.slice(0, 4));
+    // setBestSell(res.data.slice(4, 10));
+    if (result) {
+      setStore(result.slice(0, 4));
+      setBestSell(result.slice(4, 10));
+    }
+    // });
+  }, [isSuccess]);
 
   useEffect(() => {
     categoriesApi.getAllCategories().then((res) => {
@@ -46,10 +60,12 @@ const Home = () => {
       <section id='showcase' className={styles.section_basic}>
         <SectionHeader title='Some Random' subtext='Products' dataText='showcase' />
         <div className={`${styles.wrapper} ${styles.grid_layout}`}>
-          {store.map((item) => (
-            // TODO: Add action to redirect
-            <ProductCard key={item.id} data={item} />
-          ))}
+          {isLoading
+            ? 'Loading...'
+            : store.map((item) => (
+                // TODO: Add action to redirect
+                <ProductCard key={item.id} data={item} />
+              ))}
         </div>
       </section>
 
@@ -85,15 +101,17 @@ const Home = () => {
       <section id='best-sellers' className={styles.section_basic}>
         <SectionHeader title='Best Sellers' subtext='For some reason' dataText='products' />
         <div className={`${styles.wrapper} ${styles.bestseller_grid}`}>
-          {bestSell.map((item) => (
-            // TODO: Add action to redirect
-            <ProductCard
-              key={item.id}
-              data={item}
-              isBestSeller={true}
-              className={styles.bestseller__item}
-            />
-          ))}
+          {isLoading
+            ? 'Loading...'
+            : bestSell.map((item) => (
+                // TODO: Add action to redirect
+                <ProductCard
+                  key={item.id}
+                  data={item}
+                  isBestSeller={true}
+                  className={styles.bestseller__item}
+                />
+              ))}
         </div>
       </section>
 
@@ -108,6 +126,6 @@ const Home = () => {
       </section>
     </Fragment>
   );
-};
+};;;;
 
 export default Home;
