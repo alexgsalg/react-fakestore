@@ -2,7 +2,7 @@
 
 .header_navbar {
   position: fixed;
-  inset: 0 0 0 auto;
+  inset: 0 -70vw 0 auto;
   width: clamp(200px, 66vw, 300px);
   height: 100%;
   display: flex;
@@ -12,6 +12,86 @@
   background-color: var(--orange);
   transition: right ease-in var(--trs-fast);
   z-index: 110;
+  
+  &.open {
+    right: 0;
+  }
+}
+
+/* Menu icon */
+.menu_icon {
+  position: relative;
+  width: 2.8125rem;
+  height: 2.8125rem;
+  cursor: pointer;
+
+  .menu_icon__cheeckbox {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    z-index: 2;
+    -webkit-touch-callout: none;
+    position: absolute;
+    opacity: 0;
+  }
+  div {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 22px;
+    height: 12px;
+  }
+  span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--blue-grayish-dark);
+    border-radius: 1px;
+    transition: all 0.2s cubic-bezier(0.1, 0.82, 0.76, 0.965);
+
+    &:first-of-type {
+      top: 0;
+    }
+    &:last-of-type {
+      bottom: 0;
+    }
+  }
+  &.active,
+  .menu_icon__cheeckbox:checked + div {
+    span {
+      &:first-of-type {
+        transform: rotate(45deg);
+        top: 5px;
+      }
+      &:last-of-type {
+        transform: rotate(-45deg);
+        bottom: 5px;
+      }
+    }
+  }
+
+  &.active:hover span:first-of-type,
+  &.active:hover span:last-of-type,
+  &:hover .menu_icon__cheeckbox:checked + div span:first-of-type,
+  &:hover .menu_icon__cheeckbox:checked + div span:last-of-type {
+    width: 22px;
+  }
+}
+
+.navmask {
+  position: fixed;
+  inset: 0;
+  z-index: 109;
+  background-color: hsla(0deg, 0%, 0%, 0.2);
+  @at-root .menu_icon__cheeckbox:checked & {
+    background-color: green;
+  }
 }
 
 /*=============================================================================
@@ -29,5 +109,22 @@
     padding-top: 0;
     width: 100%;
     background-color: transparent;
+  }
+
+  .header_menu_icon {
+    display: none;
+  }
+
+  .menu_icon:hover {
+    span:first-of-type {
+      width: 26px;
+    }
+    span:last-of-type {
+     width: 12px;
+   }
+  }
+
+  .navmask {
+    display: none;
   }
 }

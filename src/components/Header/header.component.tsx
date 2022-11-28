@@ -7,7 +7,6 @@ import { selectCartStatus } from '../../store/cart/cart.selector';
 // components
 import CartIcon from '../../components/Cart-icon/cart-icon.component';
 import Navbar from '../Navbar/Navbar/navbar.component';
-import CartDrawer from '../CartDrawer/cart-drawer.component';
 import Icon from '../Icon/icon.component';
 // imports
 // styles and images
@@ -18,25 +17,7 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const cartStatus: boolean = useSelector(selectCartStatus);
-
-  const [menuOpen, setMenuOpen] = useState(false);
-
   const toggleCart = () => dispatch(setCartOpenStatus(!cartStatus));
-  const toggleMenu = () => setMenuOpen(!menuOpen);
-
-  const handleEscKey = useCallback((event: KeyboardEvent) => {
-    if (event.key === 'Escape') {
-      setMenuOpen(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    setMenuOpen(false);
-    document.addEventListener('keydown', handleEscKey, false);
-    return () => {
-      document.removeEventListener('keydown', handleEscKey, false);
-    };
-  }, []);
 
   return (
     <header className={styles.header}>
@@ -47,26 +28,7 @@ const Header = () => {
           </span>
         </div>
         {/* Desktop Menu */}
-        <div className={`${styles.header_menu} ${menuOpen ? styles.open : ''}`}>
-          <Navbar mobileMenu={toggleMenu} />
-          {menuOpen ? <div className={styles.navmask} onClick={toggleMenu}></div> : null}
-        </div>
-
-        {/* Mobile Menu - TODO: Transform in a component*/}
-        <div className={styles.header_menu_icon} onClick={toggleMenu}>
-          <div className={styles.menu_icon}>
-            <input
-              className={styles.menu_icon__cheeckbox}
-              type='checkbox'
-              checked={menuOpen}
-              onChange={toggleMenu}
-            />
-            <div>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-        </div>
+        <Navbar className={styles.header_menu} />
 
         <div className={styles.header_actions}>
           <div className={styles.header_actions__search}>
@@ -77,8 +39,6 @@ const Header = () => {
           </div>
         </div>
       </div>
-      {/* Cart Drawer */}
-      {/* <CartDrawer /> */}
       {/* Search bar */}
     </header>
   );
