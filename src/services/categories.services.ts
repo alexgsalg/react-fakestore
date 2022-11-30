@@ -1,12 +1,17 @@
 import http from './http-common.services';
 import { CategoryType } from '../models/categories.model';
+import { useQuery } from 'react-query';
 
 class CategoriesApi {
   getAllCategories = () => {
-    return http.get<CategoryType[]>('/categories/');
+    return useQuery(['categories'], async () => await http.get<CategoryType[]>('/categories/'));
   };
 
-  getCategoriesPaginated = (offset = 0, limit = 10) => {
+  getCategoriesPaginated = (queryId: string, offset = 0, limit = 10) => {
+    return useQuery(
+      [queryId],
+      async () => await http.get<CategoryType[]>(`/categories?offset=${offset}&limit=${limit}`),
+    );
     return http.get<CategoryType[]>(`/categories?offset=${offset}&limit=${limit}`);
   };
 

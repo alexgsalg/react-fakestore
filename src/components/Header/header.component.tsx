@@ -21,7 +21,7 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.header_container}>
+      <div className={styles.header_wrapper}>
         <div className={styles.header_logo_container} onClick={() => navigate('/')}>
           <span className={styles.header_logo} aria-hidden='true'>
             <strong data-text='Fake'>Fake</strong>Store

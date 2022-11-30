@@ -20,33 +20,18 @@ const Home = () => {
   const [bestSell, setBestSell] = useState<ProductType[]>([]);
   const [categories, setCategories] = useState<CategoryType[]>([]);
 
-  const {
-    isLoading,
-    isSuccess,
-    isError,
-    data: storeList,
-  } = useQuery('store', async () => productApi.getProductPaginated(0, 10));
+  const { data: storeList, ...storeQuery } = productApi.getProductPaginated('homeProducts', 0, 10);
+  const { data: categoryList, ...categoryQuery } = categoriesApi.getAllCategories();
 
-  // const store = isLoading && ?? storeList.data
+  // store Query
   useEffect(() => {
     const result = storeList?.data;
-    // productApi.getProductPaginated(0, 10).then((res) => {
     console.log('Products: ', result);
-    // setStore(res.data.slice(0, 4));
-    // setBestSell(res.data.slice(4, 10));
     if (result) {
       setStore(result.slice(0, 4));
       setBestSell(result.slice(4, 10));
     }
-    // });
-  }, [isSuccess]);
-
-  useEffect(() => {
-    categoriesApi.getAllCategories().then((res) => {
-      console.log('Categories: ', res.data);
-      setCategories(res.data);
-    });
-  }, []);
+  }, [storeList]);
 
   return (
     <Fragment>
@@ -60,7 +45,7 @@ const Home = () => {
       <section id='showcase' className={styles.section_basic}>
         <SectionHeader title='Some Random' subtext='Products' dataText='showcase' />
         <div className={`${styles.wrapper} ${styles.grid_layout}`}>
-          {isLoading
+          {storeQuery.isLoading
             ? 'Loading...'
             : store.map((item) => (
                 // TODO: Add action to redirect
@@ -101,7 +86,7 @@ const Home = () => {
       <section id='best-sellers' className={styles.section_basic}>
         <SectionHeader title='Best Sellers' subtext='For some reason' dataText='products' />
         <div className={`${styles.wrapper} ${styles.bestseller_grid}`}>
-          {isLoading
+          {storeQuery.isLoading
             ? 'Loading...'
             : bestSell.map((item) => (
                 // TODO: Add action to redirect
@@ -118,7 +103,7 @@ const Home = () => {
       <section id='home-categories' className={styles.section_odd}>
         <SectionHeader title='our categories' subtext='At least that' dataText='categories' />
         <div className={`${styles.wrapper} ${styles.categories_grid}`}>
-          {categories.map((item) => (
+          {categoryList?.data.map((item) => (
             // TODO: Add action to redirect
             <CategoryCard key={item.id} data={item} className={styles.categories__item} />
           ))}
@@ -126,6 +111,6 @@ const Home = () => {
       </section>
     </Fragment>
   );
-};;;;
+};
 
 export default Home;

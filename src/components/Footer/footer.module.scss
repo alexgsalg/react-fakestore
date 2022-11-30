@@ -1,0 +1,15 @@
+@use '../../assets/sass/helpers.scss';
+@import '../../assets/sass/mixins.scss';
+
+.footer {
+  padding: 2.5rem 1.5rem 3rem;
+  background-color: var(--blue-darker);
+  color: var(--white);
+
+  &_wrapper {
+    @extend .wrapper;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,17 +1,21 @@
 import http from './http-common.services';
 import { ProductType } from '../models/products.model';
+import { useQuery } from 'react-query';
 
 class ProductApi {
   getAllProducts = () => {
-    return http.get<ProductType[]>('/products/');
+    return useQuery(['products'], async () => await http.get<ProductType[]>('/products/'));
   };
 
-  getProductPaginated = (offset = 0, limit = 10) => {
-    return http.get<ProductType[]>(`/products?offset=${offset}&limit=${limit}`);
+  getProductPaginated = (queryId: string, offset = 0, limit = 10) => {
+    return useQuery(
+      [queryId],
+      async () => await http.get<ProductType[]>(`/products?offset=${offset}&limit=${limit}`),
+    );
   };
 
   getProductById = (id: number | string) => {
-    return http.get<ProductType>(`/products/${id}`);
+    return useQuery(['product'], async () => await http.get<ProductType>(`/products/${id}`));
   };
 }
 

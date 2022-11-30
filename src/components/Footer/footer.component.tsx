@@ -11,7 +11,7 @@ const Footer = () => {
 
   return (
     <footer className={styles.footer}>
-      <div className={`${styles.footer_container} ${styles.footer_grid}`}>
+      <div className={`${styles.footer_wrapper} ${styles.footer_grid}`}>
         <section className={styles.footer_section}>
           <div className={styles.footer_logo_container} onClick={() => navigate('/')}>
             <span className={styles.footer_logo}>
