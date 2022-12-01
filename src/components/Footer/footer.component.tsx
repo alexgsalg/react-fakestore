@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-// redux
+// context
 // components
 import Icon from '../Icon/icon.component';
 // imports

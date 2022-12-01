@@ -1,5 +1,5 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
-// redux
+// context
 // components
 import DefaultLayout from './layouts/default.layout';
 import CareerLayout from './layouts/career.layout';

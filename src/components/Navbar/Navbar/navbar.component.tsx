@@ -1,4 +1,4 @@
-// redux
+// context
 // components
 import NavbarItem from '../Navbar-item/navbar-item.component';
 // imports

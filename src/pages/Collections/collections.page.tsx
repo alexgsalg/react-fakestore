@@ -1,4 +1,4 @@
-// redux
+// context
 // components
 // imports
 // styles and images

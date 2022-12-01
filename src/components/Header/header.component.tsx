@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-// redux
+// context
 import { setCartOpenStatus } from '../../store/cart/cart.actions';
 import { selectCartStatus } from '../../store/cart/cart.selector';
 // components

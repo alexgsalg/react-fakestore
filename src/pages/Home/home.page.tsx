@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
-// redux
+// context
 // components
 import Button from '../../components/Button/button.component';
 import Icon from '../../components/Icon/icon.component';

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-// redux
+// context
 // components
 import Icon from '../../components/Icon/icon.component';
 import Button from '../../components/Button/button.component';

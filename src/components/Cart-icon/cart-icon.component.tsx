@@ -2,7 +2,7 @@ import {
   MouseEventHandler,
   // useState
 } from 'react';
-// redux
+// context
 // components
 // imports
 // images

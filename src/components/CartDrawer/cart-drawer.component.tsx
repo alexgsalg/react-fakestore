@@ -7,7 +7,7 @@ import {
 } from 'react';
 import { createPortal } from 'react-dom';
 import { useSelector, useDispatch } from 'react-redux';
-// redux
+// context
 import { setCartOpenStatus } from '../../store/cart/cart.actions';
 import { selectCartStatus } from '../../store/cart/cart.selector';
 // components

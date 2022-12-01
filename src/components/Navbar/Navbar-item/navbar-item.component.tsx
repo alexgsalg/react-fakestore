@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-// redux
+// context
 // components
 // imports
 // styles and images
