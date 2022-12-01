@@ -1,5 +1,4 @@
 import { Fragment, useEffect, useState } from 'react';
-import { useQuery } from 'react-query';
 // context
 // components
 import Button from '../../components/Button/button.component';
@@ -9,19 +8,17 @@ import ProductCard from '../../components/ProductCard/product-card.component';
 import CategoryCard from '../../components/CategoryCard/category-card.component';
 // imports
 import { ProductType } from '../../models/products.model';
-import productApi from '../../services/product.services';
-import { CategoryType } from '../../models/categories.model';
-import categoriesApi from '../../services/categories.services';
+import ProductApi from '../../services/product.services';
+import CategoriesApi from '../../services/categories.services';
 // styles and images
 import styles from './home.module.scss';
 
 const Home = () => {
   const [store, setStore] = useState<ProductType[]>([]);
   const [bestSell, setBestSell] = useState<ProductType[]>([]);
-  const [categories, setCategories] = useState<CategoryType[]>([]);
 
-  const { data: storeList, ...storeQuery } = productApi.getProductPaginated('homeProducts', 0, 10);
-  const { data: categoryList, ...categoryQuery } = categoriesApi.getAllCategories();
+  const { data: storeList, ...storeQuery } = ProductApi.getProductPaginated('homeProducts', 0, 10);
+  const { data: categoryList } = CategoriesApi.getCategoriesPaginated('displayCategories', 0, 8);
 
   // store Query
   useEffect(() => {

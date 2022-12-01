@@ -12,11 +12,13 @@ class CategoriesApi {
       [queryId],
       async () => await http.get<CategoryType[]>(`/categories?offset=${offset}&limit=${limit}`),
     );
-    return http.get<CategoryType[]>(`/categories?offset=${offset}&limit=${limit}`);
   };
 
   getCategoriesById = (id: number | string) => {
-    return http.get<CategoryType>(`/categories/${id}`);
+    return useQuery(
+      ['category', id],
+      async () => await http.get<CategoryType>(`/categories/${id}`),
+    );
   };
 }
 
