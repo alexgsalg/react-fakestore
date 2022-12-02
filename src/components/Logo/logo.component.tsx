@@ -4,23 +4,26 @@ import { useNavigate } from 'react-router-dom';
 // imports
 // styles and images
 import styles from './logo.module.scss';
+
 type LogoProps = {
   type?: 'light' | 'dark';
   linkTo?: string;
 };
-
-const getType = (type = 'light') => {
-  ({
-    ['light']: styles.light,
-    ['dark']: styles.dark,
-  }[type]);
+export const LOGO_TYPE = {
+  light: 'light',
+  dark: 'dark',
+  inverted: 'inverted',
 };
+export const getType = (type = LOGO_TYPE.light) =>
+  ({
+    [LOGO_TYPE.light]: styles.light,
+    [LOGO_TYPE.dark]: styles.dark,
+    [LOGO_TYPE.inverted]: styles.inverted,
+  }[type]);
 
 const Logo = ({ type, linkTo }: LogoProps) => {
   const navigate = useNavigate();
-  console.log('type', type);
   const logoType = type ? getType(type) : styles.light;
-  console.log('logoType', logoType);
 
   return (
     <div className={`${styles.logo} ${logoType}`} onClick={() => navigate(linkTo ? linkTo : '/')}>
