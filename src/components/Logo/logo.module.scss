@@ -1,0 +1,48 @@
+@use '../../assets/sass/helpers.scss';
+@import '../../assets/sass/mixins.scss';
+
+.logo {
+  position: relative;
+  font-family: var(--font-title);
+  font-size: clamp(1.7rem, 1.8rem, 1.95rem);
+  letter-spacing: -0.1rem;
+  line-height: 1em;
+  transition: all 250ms ease-in;
+  cursor: pointer;
+
+  & > * {
+    @extend .not_clicable;
+  }
+
+  & > strong {
+    position: relative;
+    display: inline-block;
+    transition: all 250ms ease-in;
+    color: var(--orange);
+    z-index: 91;
+
+    &::before {
+      position: absolute;
+      content: attr(data-text);
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: var(--orange);
+      color: var(--white);
+      overflow: hidden;
+      transition: all 200ms ease-in;
+      z-index: 90;
+    }
+  }
+
+  &:hover > strong::before {
+    width: 104%;
+  }
+}
+
+/*=============================================================================
+  Responsive Styles
+=============================================================================*/
+@include responsive(display-low) {
+}

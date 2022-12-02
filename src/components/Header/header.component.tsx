@@ -11,6 +11,7 @@ import Icon from '../Icon/icon.component';
 // imports
 // styles and images
 import styles from './header.module.scss';
+import Logo from '../Logo/logo.component';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -23,9 +24,10 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.header_wrapper}>
         <div className={styles.header_logo_container} onClick={() => navigate('/')}>
-          <span className={styles.header_logo} aria-hidden='true'>
+          <Logo />
+          {/* <span className={styles.header_logo} aria-hidden='true'>
             <strong data-text='Fake'>Fake</strong>Store
-          </span>
+          </span> */}
         </div>
         {/* Desktop Menu */}
         <Navbar className={styles.header_menu} />
