@@ -7,7 +7,7 @@ import Button from '../../components/Button/button.component';
 import ImgLightbox from '../../components/ImgLightbox/img-lightbox.component';
 // imports
 import { ProductType } from '../../models/products.model';
-import productApi from '../../services/product.services';
+import ProductApi from '../../services/product.services';
 // images
 import { ReactComponent as CartIcon } from '/src/assets/images/icon-cart.svg';
 // styles
@@ -20,12 +20,15 @@ const SingleProduct = () => {
   const [openLightbox, setOpenLightbox] = useState<boolean>(false);
   const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
 
+  const {
+    data: productItem,
+    isLoading,
+    isError,
+    ...productQuery
+  } = ProductApi.getProductById(params.id!);
+
   useEffect(() => {
-    if (!params?.id) return;
-    productApi.getProductById(params?.id).then((res) => {
-      setProduct(res.data);
-      setSelectedImage(res.data.images[0]);
-    });
+    if (!isLoading) setSelectedImage(productItem?.data.images[0]);
   }, []);
 
   const closeModal = () => setOpenLightbox(!openLightbox);
@@ -38,6 +41,8 @@ const SingleProduct = () => {
   const addToCount = () => setcount(count + 1);
   const removeFromCount = () => (count > 0 ? setcount(count - 1) : count);
 
+  if (isError) return <p>Error</p>;
+  if (isLoading) return <p>Loading...</p>;
   return (
     <div className={styles.wrapper}>
       <div className={styles.product_display}>

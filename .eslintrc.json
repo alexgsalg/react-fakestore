@@ -20,6 +20,7 @@
   "rules": {
     "@typescript-eslint/ban-types": "off",
     "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
     "camelcase": "warn",
