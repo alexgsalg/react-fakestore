@@ -1,12 +1,24 @@
 export default {
-  title: 'Fall Limited Edition Sneakers',
-  store: 'Sneaker Company',
-  description:
-    'Nulla porttitor accumsan tincidunt. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Sed porttitor lectus nibh. Vivamus magna justo per lo te queroise.',
-  price: 250,
-  discount_perc: 50,
-  featured_image: {
-    original: '/src/assets/images/image-product-1.jpg',
-    thumbnail: '/src/assets/images/image-product-1-thumbnail.jpg',
-  },
+  jobs: [
+    {
+      id: 1,
+      title: 'Frontend developer',
+    },
+    {
+      id: 2,
+      title: 'Backend developer',
+    },
+    {
+      id: 3,
+      title: 'UX Designer',
+    },
+    {
+      id: 4,
+      title: 'Devops',
+    },
+    {
+      id: 5,
+      title: 'Frontend developer',
+    },
+  ]
 };

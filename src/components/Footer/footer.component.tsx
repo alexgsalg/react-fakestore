@@ -1,20 +1,28 @@
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { version } from '../../../package.json';
 // context
 // components
-import Icon from '../Icon/icon.component';
 // imports
 import CategoriesApi from '../../services/categories.services';
+import Careers from '../../_mock_/career-list';
 // styles and images
 import styles from './footer.module.scss';
 import Logo from '../Logo/logo.component';
 
 const Footer = () => {
+  const [career, setCareers] = useState<Array<{ id: number; title: string }>>(
+    Careers.jobs.splice(0, 4),
+  );
   const { data: categoryList, isError: errorCategory } = CategoriesApi.getCategoriesPaginated(
     'displayCategories',
     0,
     8,
   );
+
+  // useEffect(() => {
+  //   setCareers(Careers)
+  // }, [])
 
   return (
     <footer className={styles.footer}>
@@ -50,9 +58,11 @@ const Footer = () => {
           <h4>Careers</h4>
           <nav className={styles.footer_list} aria-label='Career list'>
             {/* Career title and link */}
-            <a href='' aria-label='Career item'>
-              - UX Designer
-            </a>
+            {career?.map((item) => (
+              <a key={item.id} aria-label='Career item'>
+                - {item.title}
+              </a>
+            ))}
           </nav>
         </section>
       </div>
