@@ -8,6 +8,7 @@ import styles from './logo.module.scss';
 type LogoProps = {
   type?: 'light' | 'dark';
   linkTo?: string;
+  logoId?: string;
 };
 export const LOGO_TYPE = {
   light: 'light',
@@ -21,12 +22,15 @@ export const getType = (type = LOGO_TYPE.light) =>
     [LOGO_TYPE.inverted]: styles.inverted,
   }[type]);
 
-const Logo = ({ type, linkTo }: LogoProps) => {
+const Logo = ({ type, linkTo, logoId }: LogoProps) => {
   const navigate = useNavigate();
   const logoType = type ? getType(type) : styles.light;
 
   return (
-    <div className={`${styles.logo} ${logoType}`} onClick={() => navigate(linkTo ? linkTo : '/')}>
+    <div
+      id={logoId ? logoId : ''}
+      className={`${styles.logo} ${logoType}`}
+      onClick={() => navigate(linkTo ? linkTo : '/')}>
       <strong data-text='Fake'>Fake</strong>
       <span>Store</span>
     </div>

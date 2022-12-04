@@ -12,11 +12,24 @@
 
   &_grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.875rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
   }
-  &_section:last-child {
-    display: none;
+
+  &_section {
+  }
+  &_section:first-child {
+    grid-column: span 2;
+  }
+
+  &_list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  & p:first-of-type {
+    padding: var(--space-sm) 0;
   }
 }
 
@@ -24,15 +37,17 @@
   Responsive Styles
 =============================================================================*/
 @include responsive(phone-large) {
+  .footer {
+    &_grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
 }
 
 @include responsive(tablet) {
   .footer {
     &_grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-    &_section:first-child {
-      grid-column: span 2;
+      gap: var(--space-xl);
     }
   }
 }
@@ -40,10 +55,13 @@
 @include responsive(display-low) {
   .footer {
     &_grid {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
-    &_section:last-child {
-      display: block;
+    &_section:first-child {
+      grid-column: span 1;
+    }
+    & p:first-of-type {
+      max-width: 21.875rem;
     }
   }
 }
