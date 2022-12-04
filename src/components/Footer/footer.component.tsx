@@ -10,12 +10,11 @@ import styles from './footer.module.scss';
 import Logo from '../Logo/logo.component';
 
 const Footer = () => {
-  const navigate = useNavigate();
-  const {
-    data: categoryList,
-    isError: errorCategory,
-    ...categoryQuery
-  } = CategoriesApi.getCategoriesPaginated('displayCategories', 0, 8);
+  const { data: categoryList, isError: errorCategory } = CategoriesApi.getCategoriesPaginated(
+    'displayCategories',
+    0,
+    8,
+  );
 
   return (
     <footer className={styles.footer}>
