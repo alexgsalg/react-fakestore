@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 // context
 // components
 import Button from '../../components/Button/button.component';
@@ -12,6 +12,7 @@ import ProductApi from '../../services/product.services';
 import CategoriesApi from '../../services/categories.services';
 // styles and images
 import styles from './home.module.scss';
+import SectionBlock from '../../components/SectionBlock/section-block.component';
 
 const Home = () => {
   const [store, setStore] = useState<ProductType[]>([]);
@@ -23,7 +24,6 @@ const Home = () => {
   // store Query
   useEffect(() => {
     const result = storeList?.data;
-    console.log('Products: ', result);
     if (result) {
       setStore(result.slice(0, 4));
       setBestSell(result.slice(4, 10));
@@ -31,7 +31,7 @@ const Home = () => {
   }, [storeList]);
 
   return (
-    <Fragment>
+    <main>
       <section id='hero' className={styles.hero} aria-label='hero section'>
         <div className={styles.hero_wrapper}>
           <span className={styles.hero__detail}>Not real</span>
@@ -39,7 +39,8 @@ const Home = () => {
           <p className={styles.hero__subtext}>A place to not find what you need</p>
         </div>
       </section>
-      <section id='showcase' className={styles.section_basic}>
+
+      <SectionBlock id='showcase'>
         <SectionHeader title='Some Random' subtext='Products' dataText='showcase' />
         <div className={`${styles.wrapper} ${styles.grid_layout}`}>
           {storeQuery.isLoading
@@ -49,9 +50,9 @@ const Home = () => {
                 <ProductCard key={item.id} data={item} />
               ))}
         </div>
-      </section>
+      </SectionBlock>
 
-      <section id='cta-split' className={styles.section_basic}>
+      <SectionBlock id='cta-split'>
         <div className={`${styles.wrapper} ${styles.home_cta_grid}`}>
           <article className={styles.home_cta__item}>
             <small>20% OFF</small>
@@ -78,9 +79,9 @@ const Home = () => {
             />
           </article>
         </div>
-      </section>
+      </SectionBlock>
 
-      <section id='best-sellers' className={styles.section_basic}>
+      <SectionBlock id='best-sellers'>
         <SectionHeader title='Best Sellers' subtext='For some reason' dataText='products' />
         <div className={`${styles.wrapper} ${styles.bestseller_grid}`}>
           {storeQuery.isLoading
@@ -95,9 +96,10 @@ const Home = () => {
                 />
               ))}
         </div>
-      </section>
+      </SectionBlock>
 
-      <section id='home-categories' className={styles.section_odd}>
+      {/* TODO: Add Styles condition to sectionBlock */}
+      <SectionBlock id='home-categories' className={styles.section_odd}>
         <SectionHeader title='our categories' subtext='At least that' dataText='categories' />
         <div className={`${styles.wrapper} ${styles.categories_grid}`}>
           {categoryList?.data.map((item) => (
@@ -105,8 +107,8 @@ const Home = () => {
             <CategoryCard key={item.id} data={item} className={styles.categories__item} />
           ))}
         </div>
-      </section>
-    </Fragment>
+      </SectionBlock>
+    </main>
   );
 };
 

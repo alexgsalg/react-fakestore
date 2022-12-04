@@ -54,17 +54,6 @@
   }
 }
 
-.section {
-  &_basic,
-  &_odd {
-    padding: 2rem 1.25rem;
-  }
-
-  &_odd {
-    background-color: var(--grayish-lighter);
-  }
-}
-
 %grid {
   display: grid;
   gap: 1rem;

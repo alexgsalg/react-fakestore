@@ -20,10 +20,6 @@ const Footer = () => {
     8,
   );
 
-  // useEffect(() => {
-  //   setCareers(Careers)
-  // }, [])
-
   return (
     <footer className={styles.footer}>
       <div className={`${styles.footer_wrapper} ${styles.footer_grid}`}>

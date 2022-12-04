@@ -8,3 +8,10 @@ export type SectionHeaderProps = {
   subtext: string;
   dataText?: string;
 };
+
+export type SectionBlockProps = {
+  id?: string;
+  className?: string | CSSModuleClasses;
+  style?: string;
+  children?: React.ReactNode;
+};
