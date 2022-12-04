@@ -3,7 +3,7 @@
 
 .wrapper {
   @extend .wrapper;
-  
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12%;
@@ -81,7 +81,7 @@
 
 .product__description {
   margin-bottom: 1.5rem;
-  color: var(--blue-grayish-dark);
+  color: var(--grayish-darker);
 }
 
 .product__price {
@@ -115,7 +115,7 @@
   gap: 1rem;
   width: clamp(7.5rem, 40%, 9.6875rem);
   padding: 6px 10px;
-  background-color: var(--blue-grayish-light);
+  background-color: var(--grayish-lighter);
   border-radius: 8px;
 }
 
@@ -134,7 +134,7 @@
 }
 
 .action_quantity_select > .action__icon:hover {
-  color: var(--blue-grayish-dark);
+  color: var(--grayish-darker);
 }
 
 .action_quantity_select > :nth-child(2) {

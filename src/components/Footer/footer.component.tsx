@@ -6,6 +6,7 @@ import Icon from '../Icon/icon.component';
 import CategoriesApi from '../../services/categories.services';
 // styles and images
 import styles from './footer.module.scss';
+import Logo from '../Logo/logo.component';
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -19,11 +20,7 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={`${styles.footer_wrapper} ${styles.footer_grid}`}>
         <section className={styles.footer_section}>
-          <div className={styles.footer_logo_container} onClick={() => navigate('/')}>
-            <span className={styles.footer_logo}>
-              <strong data-text='Fake'>Fake</strong>Store
-            </span>
-          </div>
+          <Logo type='dark' linkTo='/' />
           <ul>
             <li>
               This project is a perfect version of a &quot;useless&quot; store that makes no sense

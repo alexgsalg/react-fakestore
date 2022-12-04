@@ -7,7 +7,7 @@
   inset: 0 -100vw 0 auto;
   width: clamp(250px, 82vw, 350px);
   height: 100vh;
-  background-color: var(--white);
+  background-color: var(--light);
   transition: right 0.3s linear;
   z-index: 120;
 }

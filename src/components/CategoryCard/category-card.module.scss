@@ -13,7 +13,7 @@
     object-fit: cover;
     object-position: center;
     overflow: hidden;
-    
+
     img {
       height: 100%;
       width: 100%;
@@ -32,9 +32,9 @@
     position: absolute;
     inset: auto auto 0 0;
     padding: 0.5rem;
-    width:fit-content;
-    background-color: var(--blue-darker);
-    color: var(--white);
+    width: fit-content;
+    background-color: var(--grayish-darker);
+    color: var(--light);
     font-size: clamp(14px, 4vw, 16px);
     line-height: 1em;
     transition: all ease var(--trs-fast);
@@ -74,7 +74,7 @@
     &__image {
       aspect-ratio: 5/3;
       filter: saturate(0.4);
-    
+
       @at-root .category:hover & > img {
         transform: scale(1.1);
         filter: saturate(1);

@@ -51,7 +51,7 @@
 .type_base {
   @extend %button;
   background-color: var(--orange);
-  color: var(--white);
+  color: var(--light);
 }
 
 .type_base:hover {
@@ -60,5 +60,5 @@
 }
 
 .type_base path {
-  fill: var(--white);
+  fill: var(--light);
 }

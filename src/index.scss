@@ -1,5 +1,46 @@
 :root {
-  /* Font */
+  /*************************************************
+   COLOR SETTINGS
+  *************************************************/
+  /* Orange */
+  --orange-darker: hsl(24, 80%, 41%);
+  --orange-dark: hsl(24, 80%, 50%);
+  --orange: hsl(24, 80%, 59%);
+  --orange-light: hsl(24, 80%, 68%);
+  --orange-lighter: hsl(24, 80%, 77%);
+
+  /* Blue */
+  --blue-darker: hsl(208, 80%, 23%);
+  --blue-dark: hsl(208, 80%, 32%);
+  --blue: hsl(208, 80%, 41%);
+  --blue-light: hsl(208, 80%, 50%);
+  --blue-lighter: hsl(208, 80%, 59%);
+
+  /* Blue */
+  --blue-darker: hsl(208, 80%, 23%);
+  --blue-dark: hsl(208, 80%, 32%);
+  --blue: hsl(208, 80%, 41%);
+  --blue-light: hsl(208, 80%, 50%);
+  --blue-lighter: hsl(208, 80%, 59%);
+
+  /* Grayish */
+  --grayish-darker: hsl(220, 14%, 24%);
+  --grayish-dark: hsl(220, 14%, 33%);
+  --grayish: hsl(220, 14%, 51%);
+  --grayish-light: hsl(220, 14%, 69%);
+  --grayish-lighter: hsl(220, 14%, 82%);
+
+  /* Neutral */
+  --light-opacity: hsla(220, 14%, 98%, 0.5);
+  --lightfull: hsl(0, 0%, 100%);
+  --light: hsl(220, 14%, 98%);
+  --dark: hsl(220, 14%, 15%);
+  --darkfull: hsl(0, 0%, 15%);
+  --black-opacity: hsla(220, 14%, 15%, 0.75);
+
+  /*************************************************
+   FONT SETTINGS
+  *************************************************/
   --font-default: 'Kumbh Sans', Inter, Avenir, Helvetica, Arial, sans-serif;
   --font-title: 'Kanit', Avenir, sans-serif;
   font-family: var(--font-default);
@@ -13,23 +54,11 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  /* Primary Colors */
-  --orange-dark: hsl(26, 86%, 48%);
-  --orange: hsl(21, 100%, 62%);
-  --orange-light: hsl(25, 100%, 94%);
-
-  /* Neutral Colors */
-  --blue-darker: hsl(220, 13%, 13%);
-  --blue-grayish-dark: hsl(219, 9%, 45%);
-  --blue-grayish: hsl(220, 14%, 75%);
-  --blue-grayish-light: hsl(223, 64%, 98%);
-  --blue-grayish-opacity: hsla(220, 14%, 75%, 0.5);
-  --white: hsl(0, 0%, 100%);
-  --black: hsl(0, 0%, 15%);
-  --black-opacity: hsla(0, 0%, 0%, 0.75);
-
-  // Animations
-  --trs-fast: 250ms;
+  /*************************************************
+   GENERAL SETTINGS
+  *************************************************/
+  /* Animations */
+  --trs-fast: 200ms;
   --trs: 350ms;
 }
 
@@ -40,7 +69,8 @@
   box-sizing: border-box;
 }
 
-#root,body {
+#root,
+body {
   width: 100vw;
   overflow-x: hidden;
 }
@@ -50,7 +80,9 @@ div#cart_drawer {
   inset: 0;
   pointer-events: none;
   z-index: 1000;
-  & > * {pointer-events: all;}
+  & > * {
+    pointer-events: all;
+  }
 }
 
 a {

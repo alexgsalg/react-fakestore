@@ -5,13 +5,13 @@
   position: relative;
   width: 1.563rem;
   height: 1.563rem;
-  color: var(--white);
+  color: var(--light);
 }
 
 .cart_icon_svg {
   cursor: pointer;
   & path {
-    fill: var(--blue-grayish-dark);
+    fill: var(--grayish-darker);
     transition: fill 250ms ease-out;
   }
 
@@ -29,7 +29,7 @@
   padding: 0.125rem 0.3rem 0.11rem;
   background-color: var(--orange);
   border-radius: 50%;
-  color: var(--white) !important;
+  color: var(--light) !important;
   font: 0.625rem/1em var(--font-default);
   font-weight: 700;
   pointer-events: none;

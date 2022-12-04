@@ -3,13 +3,53 @@
 
 .footer {
   padding: 2.5rem 1.5rem 3rem;
-  background-color: var(--blue-darker);
-  color: var(--white);
+  background-color: var(--grayish-darker);
+  color: var(--grayish-light);
 
   &_wrapper {
     @extend .wrapper;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
   }
+
+  &_grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.875rem;
+  }
+  &_section:last-child {
+    display: none;
+  }
+}
+
+/*=============================================================================
+  Responsive Styles
+=============================================================================*/
+@include responsive(phone-large) {
+}
+
+@include responsive(tablet) {
+  .footer {
+    &_grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    &_section:first-child {
+      grid-column: span 2;
+    }
+  }
+}
+
+@include responsive(display-low) {
+  .footer {
+    &_grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    &_section:last-child {
+      display: block;
+    }
+  }
+}
+
+@include responsive(display-mid) {
+}
+
+@include responsive(display-large) {
 }

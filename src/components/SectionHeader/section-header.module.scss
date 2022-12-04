@@ -6,7 +6,12 @@
   flex-direction: column;
   position: relative;
   padding: 1.5rem 0;
+  color: var(--grayish-darker);
   container-type: inline-size;
+
+  &_odd {
+    color: var(--grayish-lighter);
+  }
 
   &__title {
     font-size: clamp(30px, 10vw, 50px);
@@ -29,13 +34,13 @@
     display: inline-block;
     width: 100%;
     text-align: center;
-    color: var(--blue-grayish);
+    color: inherit;
     font-size: clamp(20px, 12vw, 100px);
     letter-spacing: 0.2rem;
     font-weight: 600;
     text-transform: uppercase;
 
-    opacity: 0.26;
+    opacity: 0.15;
     transform: translate(-50%, -50%);
     z-index: -1;
   }
