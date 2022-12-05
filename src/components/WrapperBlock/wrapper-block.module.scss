@@ -1,0 +1,6 @@
+@import '../../assets/sass/mixins.scss';
+@import '../../assets/sass/helpers';
+
+.wrapper {
+  @extend .wrapper;
+}

@@ -1,0 +1,88 @@
+@import '../../assets/sass/mixins.scss';
+@import '../../assets/sass/helpers';
+
+.section_header {
+  @include flex(center, center);
+  flex-direction: column;
+  position: relative;
+  padding: 1.5rem 0;
+  color: var(--grayish-darker);
+  container-type: inline-size;
+
+  &_odd {
+    color: var(--grayish-lighter);
+  }
+
+  &__title {
+    font-size: clamp(30px, 10vw, 50px);
+    line-height: 1.2em;
+    text-transform: lowercase;
+    text-align: center;
+  }
+
+  &__subtext {
+    font-size: clamp(16px, 5vw, 20px);
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  &::before {
+    position: absolute;
+    content: attr(data-text);
+    top: 58%;
+    left: 50%;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    color: inherit;
+    font-size: clamp(20px, 12vw, 100px);
+    letter-spacing: 0.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    opacity: 0.15;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+}
+
+/*=============================================================================
+  Responsive Styles
+=============================================================================*/
+@include responsive(phone-large) {
+  .section_header {
+    &::before {
+      top: 66%;
+    }
+  }
+}
+
+@include responsive(tablet) {
+}
+
+@include responsive(display-low) {
+  .section_header {
+    padding: 4rem 0;
+    &::before {
+      top: 51%;
+    }
+    &__title {
+      font-size: clamp(30px, 8vw, 45px);
+    }
+    &__subtext {
+      font-size: clamp(16px, 4vw, 18px);
+    }
+  }
+}
+
+@include responsive(display-mid) {
+  .section_header {
+    padding: 4rem 0;
+    &::before {
+      font-size: clamp(20px, 12vw, 120px);
+    }
+  }
+}
+
+@include responsive(display-large) {
+}
