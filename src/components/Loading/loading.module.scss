@@ -1,0 +1,51 @@
+@import '../../assets/sass/mixins.scss';
+@import '../../assets/sass/helpers';
+
+/**
+  * Double ringed
+*/
+
+.double_ringed {
+  position: relative;
+  @include flex(center, center);
+  width: 100%;
+  height: 100%;
+  min-height: 80px;
+
+  &:after,
+  &:before {
+    border-radius: 100%;
+    display: block;
+    content: '';
+    position: absolute;
+  }
+
+  &:after {
+    height: 15px;
+    width: 15px;
+    -webkit-animation: spin 1s infinite linear;
+    animation: spin 1s infinite linear;
+    -webkit-box-shadow: 19px 0 0 0 var(--orange), -19px 0 0 0 var(--orange);
+    box-shadow: 19px 0 0 0 var(--orange), -19px 0 0 0 var(--orange);
+  }
+
+  &:before {
+    height: 40px;
+    width: 40px;
+    border: 2px solid var(--grayish-lighter);
+  }
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

@@ -4,6 +4,7 @@
 .product {
   @include flex(stretch, flex-start);
   flex-direction: column;
+  margin-bottom: var(--space-lg);
   cursor: pointer;
 
   &__image {
@@ -31,6 +32,19 @@
   &__price {
     font-size: clamp(16px, 5vw, 18px);
     margin-top: -0.5rem;
+  }
+}
+
+.horizontal {
+  flex-direction: row;
+  gap: var(--space-sm);
+
+  @at-root .product {
+    &__image {
+      width: clamp(20%, 100px, 35%);
+      aspect-ratio: none;
+      height: 100%;
+    }
   }
 }
 

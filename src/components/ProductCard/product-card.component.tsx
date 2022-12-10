@@ -12,6 +12,7 @@ const ProductCard = ({
   className,
   showRating = true,
   isBestSeller = false,
+  isHorizontal = false,
 }: ProductCardProps) => {
   const [randomRating, setRandomRating] = useState(0);
 
@@ -25,24 +26,28 @@ const ProductCard = ({
   };
 
   const { id, title, price, images } = data;
+  const cardOrientation = isHorizontal ? styles.horizontal : '';
+
   return (
     <article
-      className={`${styles.product} ${className ? className : null}`}
+      className={`${styles.product} ${cardOrientation} ${className ? className : ''}`}
       onClick={onClickAction}>
       <figure className={styles.product__image}>
         <img src={images[0]} alt={`Product ${title}`} />
       </figure>
-      <h3 className={styles.product__title}>{title}</h3>
-      {showRating ? (
-        <Rating
-          readonly={true}
-          allowFraction={true}
-          initialValue={isBestSeller ? 5 : randomRating}
-          fillColor='hsl(21, 100%, 62%)'
-          size={14}
-        />
-      ) : null}
-      <p className={styles.product__price}>${price}</p>
+      <div>
+        <h3 className={styles.product__title}>{title}</h3>
+        {showRating ? (
+          <Rating
+            readonly={true}
+            allowFraction={true}
+            initialValue={isBestSeller ? 5 : randomRating}
+            fillColor='hsl(21, 100%, 62%)'
+            size={14}
+          />
+        ) : null}
+        <p className={styles.product__price}>${price}</p>
+      </div>
     </article>
   );
 };

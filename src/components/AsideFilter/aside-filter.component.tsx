@@ -1,4 +1,3 @@
-import { Fragment } from 'react';
 // components
 import Button from '../Button/button.component';
 import Icon from '../Icon/icon.component';
@@ -6,20 +5,13 @@ import Icon from '../Icon/icon.component';
 import { StructureBlockProps } from '../../models/generics.model';
 import CategoriesApi from '../../services/categories.services';
 // styles
-import styles from './list-filter.module.scss';
+import styles from './aside-filter.module.scss';
 
-const ListFilter = ({ id, style, children }: StructureBlockProps<string>) => {
+const ListFilter = ({ id, style }: StructureBlockProps<string>) => {
   const { data: categoryList, isLoading: catLoading } = CategoriesApi.getAllCategories();
   return (
-    <Fragment>
-      <Button
-        text='Filter'
-        buttonType='base'
-        size='sm'
-        action={() => alert('HAHA you fool')}
-        iconBefore={<Icon iconName='filter_list' size={16} />}
-      />
-      <aside className={styles.product_filter}>
+    <aside id={id} className={`${styles.filter} ${style}`}>
+      <div className={styles.filter_wrapper}>
         <h3>Product categories</h3>
         <nav className={styles.filter_list} aria-label='Category list'>
           {catLoading
@@ -30,8 +22,15 @@ const ListFilter = ({ id, style, children }: StructureBlockProps<string>) => {
                 </a>
               ))}
         </nav>
-      </aside>
-    </Fragment>
+      </div>
+      <Button
+        text='Filter'
+        buttonType='base'
+        size='sm'
+        action={() => alert('HAHA you fool')}
+        iconBefore={<Icon iconName='filter_list' size={16} />}
+      />
+    </aside>
   );
 };
 

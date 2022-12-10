@@ -1,10 +1,8 @@
 @import '../../assets/sass/mixins.scss';
 @import '../../assets/sass/helpers';
 
-.grid_with_filter {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-md);
+.filter {
+  padding: var(--space-sm);
 }
 
 /*=============================================================================
@@ -14,17 +12,9 @@
 }
 
 @include responsive(tablet) {
-  .grid_with_filter {
-    grid-template-columns: minmax(150px, 200px) 1fr;
-    gap: var(--space-lg);
-  }
 }
 
 @include responsive(display-low) {
-  .grid_with_filter {
-    grid-template-columns: minmax(200px, 300px) 1fr;
-    gap: var(--space-lg);
-  }
 }
 
 @include responsive(display-mid) {
