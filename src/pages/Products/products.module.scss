@@ -7,6 +7,12 @@
   gap: var(--space-md);
 }
 
+.products_list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
 /*=============================================================================
   Responsive Styles
 =============================================================================*/
@@ -25,9 +31,23 @@
     grid-template-columns: minmax(200px, 300px) 1fr;
     gap: var(--space-lg);
   }
+
+  .products_list {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
 }
 
 @include responsive(display-mid) {
+  .grid_with_filter {
+    grid-template-columns: minmax(200px, 300px) 1fr;
+    gap: var(--space-lg);
+  }
+
+  .products_list {
+    grid-template-columns: repeat(auto-fill ,minmax(200px, 1fr));
+    gap: var(--space-md);
+  }
 }
 
 @include responsive(display-large) {

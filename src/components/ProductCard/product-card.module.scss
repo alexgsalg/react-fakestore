@@ -39,12 +39,11 @@
   flex-direction: row;
   gap: var(--space-sm);
 
-  @at-root .product {
-    &__image {
-      width: clamp(20%, 100px, 35%);
-      aspect-ratio: none;
-      height: 100%;
-    }
+  .product__image {
+    width: clamp(20%, 100px, 35%);
+    aspect-ratio: none;
+    height: 100%;
+    
   }
 }
 
