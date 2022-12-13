@@ -4,8 +4,23 @@
 .product {
   @include flex(stretch, flex-start);
   flex-direction: column;
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-xs);
+  padding: 0.5rem;
+  background-color: var(--lightfull);
+  box-shadow: 0 1px 10px 1px hsla(220, 14%, 15%, 0.15);
+  border-radius: 5px;
   cursor: pointer;
+
+  &_info {
+    flex: 1;
+    width: 100%;
+    @include flex(stretch, space-between);
+    flex-direction: column;
+
+    & > div:first-child {
+      flex: 1;
+    }
+  }
 
   &__image {
     display: block;
@@ -13,6 +28,7 @@
     aspect-ratio: 5/3;
     object-fit: cover;
     object-position: center;
+    border-radius: 5px;
     overflow: hidden;
 
     img {
@@ -31,7 +47,10 @@
 
   &__price {
     font-size: clamp(16px, 5vw, 18px);
-    margin-top: -0.5rem;
+  }
+
+  &_footer {
+    @include flex(space-between, center);
   }
 }
 
@@ -43,8 +62,15 @@
     width: clamp(20%, 100px, 35%);
     aspect-ratio: none;
     height: 100%;
-    
   }
+}
+
+.add_icon {
+  position: relative;
+  padding: 5px;
+  background-color: var(--orange);
+  color: var(--light);
+  border-radius: 50%;
 }
 
 /*=============================================================================

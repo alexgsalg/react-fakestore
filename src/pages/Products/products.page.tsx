@@ -30,7 +30,7 @@ const Products = () => {
 
   return (
     <main>
-      <SectionBlock>
+      <SectionBlock style='no_margin'>
         <SectionHeader title='our precisous' subtext='products' dataText='or not' />
       </SectionBlock>
 

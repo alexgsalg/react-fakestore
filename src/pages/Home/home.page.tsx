@@ -98,7 +98,6 @@ const Home = () => {
         </div>
       </SectionBlock>
 
-      {/* TODO: Add Styles condition to sectionBlock */}
       <SectionBlock id='home-categories' className={styles.section_odd}>
         <SectionHeader title='our categories' subtext='At least that' dataText='categories' />
         <div className={`${styles.wrapper} ${styles.categories_grid}`}>
