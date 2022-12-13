@@ -1,5 +1,3 @@
-import { StructureBlockProps } from './generics.model';
-
 /**
  * @title section title
  * @subtext Text below title, preference for short sentences, max of 20 characters
