@@ -1,14 +1,24 @@
 @import '../../assets/sass/mixins.scss';
 @import '../../assets/sass/helpers';
 
-.product {
-  @include flex(stretch, flex-start);
-  flex-direction: column;
-  margin-bottom: var(--space-xs);
+%card {
   padding: 0.5rem;
   background-color: var(--lightfull);
   box-shadow: 0 1px 10px 1px hsla(220, 14%, 15%, 0.15);
   border-radius: 5px;
+}
+
+%removecard {
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 5px;
+}
+
+.product {
+  @include flex(stretch, flex-start);
+  flex-direction: column;
+  margin-bottom: var(--space-xs);
   cursor: pointer;
 
   &_info {
@@ -49,19 +59,29 @@
     font-size: clamp(16px, 5vw, 18px);
   }
 
+  
   &_footer {
     @include flex(space-between, center);
+  }
+
+  .add_icon {
+    display: none;
   }
 }
 
 .horizontal {
   flex-direction: row;
+  @extend %card;
   gap: var(--space-sm);
 
   .product__image {
     width: clamp(20%, 100px, 35%);
     aspect-ratio: none;
     height: 100%;
+  }
+
+  .add_icon {
+    display: block;
   }
 }
 
