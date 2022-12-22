@@ -38,16 +38,16 @@ const Products = () => {
         <WrapperBlock style={styles.grid_with_filter}>
           <AsideFilter />
           {/* grid block */}
-          <div className={styles.products_list}>
-            {isLoading ? (
-              <LoadingIcon />
-            ) : (
-              storeList?.data?.map((item: ProductType) => (
+          {isLoading ? (
+            <LoadingIcon />
+          ) : (
+            <div className={styles.products_list}>
+              {storeList?.data?.map((item: ProductType) => (
                 // TODO: Add action to redirect
                 <ProductCard key={item.id} data={item} isHorizontal={horizontalCard} />
-              ))
-            )}
-          </div>
+              ))}
+            </div>
+          )}
         </WrapperBlock>
       </SectionBlock>
     </main>
