@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import { store } from './store/store';
 import './index.scss';
 import CartDrawer from './components/CartDrawer/cart-drawer.component';
+import ScrollToTop from './utils/ScrollToTop';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -25,6 +26,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   // <React.StrictMode>
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
+      <ScrollToTop />
       <Provider store={store}>
         <App />
         {/* Cart Drawer */}
