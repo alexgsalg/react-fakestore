@@ -14,6 +14,7 @@ import ProductApi from '../../services/product.services';
 import useCheckMobileScreen from '../../hooks/useCheckMobileScreen';
 // styles and images
 import styles from './products.module.scss';
+import GridBlock from '../../components/GridBlock/grid-block.component';
 
 const Products = () => {
   const cardOrientation = useCheckMobileScreen();
@@ -41,12 +42,14 @@ const Products = () => {
           {isLoading ? (
             <LoadingIcon />
           ) : (
-            <div className={styles.products_list}>
+            <GridBlock xs={1} sm={1} md={2} lg={3} xl={4}>
+              {/* <div className={styles.products_list}> */}
               {storeList?.data?.map((item: ProductType) => (
                 // TODO: Add action to redirect
                 <ProductCard key={item.id} data={item} isHorizontal={horizontalCard} />
               ))}
-            </div>
+              {/* </div> */}
+            </GridBlock>
           )}
         </WrapperBlock>
       </SectionBlock>

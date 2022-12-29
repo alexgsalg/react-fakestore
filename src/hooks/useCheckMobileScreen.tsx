@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const useCheckMobileScreen = (): boolean => {
+const useCheckMobileScreen = (breakpoint = 800): boolean => {
   const [width, setWidth] = useState(window.innerWidth);
   const handleWindowSizeChange = () => {
     setWidth(window.innerWidth);
@@ -13,7 +13,7 @@ const useCheckMobileScreen = (): boolean => {
     };
   }, []);
 
-  return width <= 768;
+  return width <= breakpoint;
 };
 
 export default useCheckMobileScreen;

@@ -45,8 +45,8 @@
   }
 
   .products_list {
-    grid-template-columns: repeat(auto-fill ,minmax(200px, 1fr));
-    gap: var(--space-md);
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--space-lg);
   }
 }
 

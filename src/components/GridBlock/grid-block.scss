@@ -1,0 +1,54 @@
+@import '../../assets/sass/mixins.scss';
+@import '../../assets/sass/helpers';
+
+.gridblock {
+  display: grid;
+}
+
+/*=============================================================================
+  Responsive Styles
+=============================================================================*/
+@include responsive(phone-large) {
+  @for $i from 1 through 6 {
+    .xs-#{$i} {
+      grid-template-columns: repeat($i, 1fr);
+      gap: var(--space-md);
+    }
+  }
+}
+
+@include responsive(tablet) {
+  @for $i from 1 through 6 {
+    .sm-#{$i} {
+      grid-template-columns: repeat($i, 1fr);
+      gap: var(--space-md);
+    }
+  }
+}
+
+@include responsive(display-low) {
+  @for $i from 1 through 6 {
+    .md-#{$i} {
+      grid-template-columns: repeat($i, 1fr);
+      gap: var(--space-md);
+    }
+  }
+}
+
+@include responsive(display-mid) {
+  @for $i from 1 through 6 {
+    .lg-#{$i} {
+      grid-template-columns: repeat($i, 1fr);
+      gap: var(--space-md);
+    }
+  }
+}
+
+@include responsive(display-large) {
+  @for $i from 1 through 6 {
+    .xl-#{$i} {
+      grid-template-columns: repeat($i, 1fr);
+      gap: var(--space-md);
+    }
+  }
+}
