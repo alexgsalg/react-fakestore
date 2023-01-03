@@ -1,3 +1,5 @@
+import { StructureBlockProps } from './generics.model';
+
 /**
  * @title section title
  * @subtext Text below title, preference for short sentences, max of 20 characters
@@ -9,9 +11,6 @@ export type SectionHeaderProps = {
   dataText?: string;
 };
 
-export type SectionBlockProps = {
-  id?: string;
-  className?: string | CSSModuleClasses;
-  style?: string;
-  children?: React.ReactNode;
-};
+export interface SectionBlockProps extends StructureBlockProps<string> {
+  type?: string;
+}

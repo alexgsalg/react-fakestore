@@ -16,9 +16,9 @@ export const getStyle = (style = TYPE.basic) =>
     [TYPE.odd]: styles.section_odd,
     [TYPE.no_margin]: styles.section_no_margin,
   }[style]);
-const SectionBlock = ({ id, className, children, style }: SectionBlockProps) => {
-  const customStyle = style ? getStyle(style) : styles.section_basic;
-  const customClassName = className ? className : '';
+const SectionBlock = ({ id, customClass, children, type }: SectionBlockProps) => {
+  const customStyle = type ? getStyle(type) : styles.section_basic;
+  const customClassName = customClass ? customClass : '';
 
   return (
     <section id={id} className={`${customStyle} ${customClassName}`}>

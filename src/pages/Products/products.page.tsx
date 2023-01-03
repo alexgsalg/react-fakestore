@@ -31,12 +31,12 @@ const Products = () => {
 
   return (
     <main>
-      <SectionBlock style='no_margin'>
+      <SectionBlock customClass='no_margin'>
         <SectionHeader title='our precisous' subtext='products' dataText='or not' />
       </SectionBlock>
 
       <SectionBlock>
-        <WrapperBlock style={styles.grid_with_filter}>
+        <WrapperBlock customClass={styles.grid_with_filter}>
           <AsideFilter />
           {/* grid block */}
           {isLoading ? (

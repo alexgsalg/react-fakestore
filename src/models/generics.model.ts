@@ -10,6 +10,6 @@ export type GenericCardProps<T, A = () => void> = {
 export type StructureBlockProps<S> = {
   id?: string;
   /** Action to be executed when the card is clicked, by default the return is of void type. */
-  style?: S;
+  customClass?: S;
   children?: React.ReactNode;
 };
