@@ -1,5 +1,3 @@
-import { useCallback, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 // context
 import { setCartOpenStatus } from '../../store/cart/cart.actions';
@@ -14,7 +12,6 @@ import styles from './header.module.scss';
 import Logo from '../Logo/logo.component';
 
 const Header = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const cartStatus: boolean = useSelector(selectCartStatus);

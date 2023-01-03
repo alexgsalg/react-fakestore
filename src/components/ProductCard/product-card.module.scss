@@ -28,7 +28,7 @@
     flex-direction: column;
 
     & > div:first-child {
-      flex: 1;
+      // flex: 1;
     }
   }
 
@@ -52,6 +52,7 @@
   &__title {
     font-size: clamp(14px, 4vw, 16px);
     margin-top: 0.5rem;
+    font-weight: 500;
     line-height: 1.3em;
   }
 
@@ -59,7 +60,6 @@
     font-size: clamp(16px, 5vw, 18px);
   }
 
-  
   &_footer {
     @include flex(space-between, center);
   }
