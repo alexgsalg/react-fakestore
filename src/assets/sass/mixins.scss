@@ -2,26 +2,31 @@
 
 @mixin responsive($breakpoint) {
   @if $breakpoint == phone-large {
+    //xs
     @media screen and (min-width: 481px) {
       @content;
     }
   }
   @if $breakpoint == tablet {
+    //sm
     @media screen and (min-width: 600px) {
       @content;
     }
   }
   @if $breakpoint == display-low {
+    //md
     @media screen and (min-width: 800px) {
       @content;
     }
   }
   @if $breakpoint == display-mid {
+    //lg
     @media screen and (min-width: 1025px) {
       @content;
     }
   }
   @if $breakpoint == display-large {
+    //xl
     @media screen and (min-width: 1201) {
       @content;
     }

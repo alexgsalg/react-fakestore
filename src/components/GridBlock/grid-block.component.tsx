@@ -6,7 +6,8 @@ import { StructureBlockProps } from '../../models/generics.model';
 import './grid-block.scss';
 
 interface GridBlockProps extends StructureBlockProps<string> {
-  xs?: number | 'fit';
+  /**XS is mandatory because is a mobile-first structure*/
+  xs: number | 'fit';
   sm?: number | 'fit';
   md?: number | 'fit';
   lg?: number | 'fit';
