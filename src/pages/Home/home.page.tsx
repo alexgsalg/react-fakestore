@@ -103,7 +103,7 @@ const Home = () => {
         )}
       </SectionBlock>
 
-      <SectionBlock id='home-categories' className={styles.section_odd}>
+      <SectionBlock id='home-categories' type={'odd'}>
         <SectionHeader title='our categories' subtext='At least that' dataText='categories' />
         <div className={`${styles.wrapper} ${styles.categories_grid}`}>
           {categoryList?.data.map((item) => (

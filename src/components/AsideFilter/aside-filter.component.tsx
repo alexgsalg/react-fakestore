@@ -7,10 +7,10 @@ import CategoriesApi from '../../services/categories.services';
 // styles
 import styles from './aside-filter.module.scss';
 
-const ListFilter = ({ id, style }: StructureBlockProps<string>) => {
+const ListFilter = ({ id, customClass }: StructureBlockProps<string>) => {
   const { data: categoryList, isLoading: catLoading } = CategoriesApi.getAllCategories();
   return (
-    <aside id={id} className={`${styles.filter} ${style}`}>
+    <aside id={id} className={`${styles.filter} ${customClass}`}>
       <div className={styles.filter_wrapper}>
         <h3>Product categories</h3>
         <nav className={styles.filter_list} aria-label='Category list'>

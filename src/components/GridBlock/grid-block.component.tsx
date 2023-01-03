@@ -14,8 +14,8 @@ interface GridBlockProps extends StructureBlockProps<string> {
   xl?: number | 'fit';
 }
 
-const GridBlock = ({ id, style, children, xs, sm, md, lg, xl }: GridBlockProps) => {
-  const customStyle = style ? style : '';
+const GridBlock = ({ id, customClass, children, xs, sm, md, lg, xl }: GridBlockProps) => {
+  const customStyle = customClass ? customClass : '';
   const xsGrid = xs ? `xs-${xs}` : '';
   const smGrid = sm ? `sm-${sm}` : '';
   const mdGrid = md ? `md-${md}` : '';
