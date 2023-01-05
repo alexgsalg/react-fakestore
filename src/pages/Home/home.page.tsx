@@ -46,7 +46,7 @@ const Home = () => {
           {storeQuery.isLoading ? (
             <LoadingIcon />
           ) : (
-            <GridBlock xs={2} sm={3} lg={4} customClass={styles.grid_layout}>
+            <GridBlock xs={2} sm={3} md={4} customClass={styles.grid_layout}>
               {store.map((item) => (
                 // TODO: Add action to redirect
                 <ProductCard key={item.id} data={item} />
@@ -91,7 +91,7 @@ const Home = () => {
           {storeQuery.isLoading ? (
             <LoadingIcon />
           ) : (
-            <GridBlock xs={2} sm={3} lg={4} customClass={styles.bestseller_grid}>
+            <GridBlock xs={2} sm={4} md={3} lg={3} xl={4} customClass={styles.bestseller_grid}>
               {bestSell.map((item) => (
                 // TODO: Add action to redirect
                 <ProductCard

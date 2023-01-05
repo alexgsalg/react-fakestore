@@ -129,10 +129,10 @@
 }
 
 .bestseller {
-  &_grid {
-    @extend %grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
+  // &_grid {
+  //   @extend %grid;
+  //   grid-template-columns: repeat(2, 1fr);
+  // }
 
   &__item {
     &:nth-child(-n + 2) {
@@ -154,9 +154,9 @@
   .home_cta_grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .bestseller_grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+  // .bestseller_grid {
+  //   grid-template-columns: repeat(4, 1fr);
+  // }
 }
 
 @include responsive(display-medium) {
