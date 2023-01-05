@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
 // context
 // components
+import { SectionBlock, SectionHeader } from '../../component-structures';
 import Button from '../../components/Button/button.component';
 import Icon from '../../components/Icon/icon.component';
 import LoadingIcon from '../../components/Loading/loading.component';
-import SectionHeader from '../../components/SectionHeader/section-header.component';
 import ProductCard from '../../components/ProductCard/product-card.component';
 import CategoryCard from '../../components/CategoryCard/category-card.component';
-import SectionBlock from '../../components/SectionBlock/section-block.component';
 // imports
 import { ProductType } from '../../models/products.model';
 import ProductApi from '../../services/product.services';

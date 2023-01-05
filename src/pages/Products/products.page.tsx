@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
 // context
 // components
-import SectionHeader from '../../components/SectionHeader/section-header.component';
-import SectionBlock from '../../components/SectionBlock/section-block.component';
-import WrapperBlock from '../../components/WrapperBlock/wrapper-block.component';
+import { SectionBlock, SectionHeader, WrapperBlock, GridBlock } from '../../component-structures';
 import AsideFilter from '../../components/AsideFilter/aside-filter.component';
 import ProductCard from '../../components/ProductCard/product-card.component';
 import LoadingIcon from '../../components/Loading/loading.component';
@@ -14,7 +12,6 @@ import ProductApi from '../../services/product.services';
 import useCheckMobileScreen from '../../hooks/useCheckMobileScreen';
 // styles and images
 import styles from './products.module.scss';
-import GridBlock from '../../components/GridBlock/grid-block.component';
 
 const Products = () => {
   const cardOrientation = useCheckMobileScreen();
