@@ -58,10 +58,10 @@
 /*=============================================================================
   Responsive Styles
 =============================================================================*/
-@include responsive(phone-large) {
+@include responsive(device-small) {
 }
 
-@include responsive(tablet) {
+@include responsive(display-small) {
   .category {
     &__image {
       aspect-ratio: 6/3;
@@ -69,7 +69,7 @@
   }
 }
 
-@include responsive(display-low) {
+@include responsive(display-medium) {
   .category {
     &__image {
       aspect-ratio: 5/3;
@@ -88,8 +88,8 @@
   }
 }
 
-@include responsive(display-mid) {
+@include responsive(display-large) {
 }
 
-@include responsive(display-large) {
+@include responsive(extra-large) {
 }

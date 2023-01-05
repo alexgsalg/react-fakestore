@@ -22,7 +22,7 @@
   padding: 12px 16px;
   font: 400 18px/1.2em var(--font-default);
 
-  @include responsive(display-low) {
+  @include responsive(display-medium) {
     padding: 10px 12px;
     font: 400 14px/1.2em var(--font-default);
   }
@@ -32,7 +32,7 @@
   padding: 16px 20px;
   font: 400 22px/1.2em var(--font-default);
 
-  @include responsive(display-low) {
+  @include responsive(display-medium) {
     padding: 14px 18px;
     font: 400 1rem/1.2em var(--font-default);
   }
@@ -42,7 +42,7 @@
   padding: 20px 24px;
   font: 400 24px/1.2em var(--font-default);
 
-  @include responsive(display-low) {
+  @include responsive(display-medium) {
     padding: 18px 26px;
     font: 400 18px/1.2em var(--font-default);
   }

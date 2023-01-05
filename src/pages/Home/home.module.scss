@@ -144,41 +144,28 @@
   }
 }
 
-.categories {
-  &_grid {
-    @extend %grid;
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-
 /*=============================================================================
   Responsive Styles
 =============================================================================*/
-@include responsive(phone-large) {
-  .categories_grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+@include responsive(device-small) {
 }
 
-@include responsive(tablet) {
+@include responsive(display-small) {
   .home_cta_grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .bestseller_grid {
     grid-template-columns: repeat(4, 1fr);
   }
-  .categories_grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
-@include responsive(display-low) {
+@include responsive(display-medium) {
   .grid_layout {
     grid-template-columns: repeat(4, 1fr);
   }
-  .bestseller_grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  // .bestseller_grid {
+  //   grid-template-columns: repeat(3, 1fr);
+  // }
   .bestseller__item,
   .bestseller__item:nth-child(-n + 2) {
     grid-column: span 1;
@@ -186,12 +173,9 @@
       aspect-ratio: 2/1;
     }
   }
-  .categories_grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 
-@include responsive(display-mid) {
+@include responsive(display-large) {
   .hero {
     justify-content: center;
     -webkit-box-pack: center;
@@ -202,5 +186,5 @@
   }
 }
 
-@include responsive(display-large) {
+@include responsive(extra-large) {
 }

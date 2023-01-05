@@ -6,8 +6,9 @@ import { StructureBlockProps } from '../../models/generics.model';
 import styles from './wrapper-block.module.scss';
 
 const WrapperBlock = ({ id, customClass, children }: StructureBlockProps<string>) => {
+  const applyCustomClass = customClass ? customClass : '';
   return (
-    <div id={id} className={`${styles.wrapper} ${customClass}`}>
+    <div id={id} className={`${styles.wrapper} ${applyCustomClass}`}>
       {children}
     </div>
   );

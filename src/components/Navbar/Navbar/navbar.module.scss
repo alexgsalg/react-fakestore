@@ -97,7 +97,7 @@
 /*=============================================================================
   Responsive Styles
 =============================================================================*/
-@include responsive(display-low) {
+@include responsive(display-medium) {
   .header_navbar {
     position: relative;
     inset: unset;

@@ -36,7 +36,7 @@
 /*=============================================================================
   Responsive Styles
 =============================================================================*/
-@include responsive(phone-large) {
+@include responsive(device-small) {
   .footer {
     &_grid {
       grid-template-columns: repeat(4, 1fr);
@@ -44,7 +44,7 @@
   }
 }
 
-@include responsive(tablet) {
+@include responsive(display-small) {
   .footer {
     &_grid {
       gap: var(--space-xl);
@@ -52,7 +52,7 @@
   }
 }
 
-@include responsive(display-low) {
+@include responsive(display-medium) {
   .footer {
     &_grid {
       grid-template-columns: repeat(3, 1fr);
@@ -66,8 +66,8 @@
   }
 }
 
-@include responsive(display-mid) {
+@include responsive(display-large) {
 }
 
-@include responsive(display-large) {
+@include responsive(extra-large) {
 }

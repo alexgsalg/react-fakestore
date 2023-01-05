@@ -1,31 +1,32 @@
 // Autoprefix CSS: https://autoprefixer.github.io
 
 @mixin responsive($breakpoint) {
-  @if $breakpoint == phone-large {
+  //default xs
+  @if $breakpoint == device-small {
     //xs
-    @media screen and (min-width: 481px) {
+    @media only screen and (max-width: 575px) {
       @content;
     }
   }
-  @if $breakpoint == tablet {
+  @if $breakpoint == display-small {
     //sm
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 576px) {
       @content;
     }
   }
-  @if $breakpoint == display-low {
+  @if $breakpoint == display-medium {
     //md
-    @media screen and (min-width: 800px) {
-      @content;
-    }
-  }
-  @if $breakpoint == display-mid {
-    //lg
-    @media screen and (min-width: 1025px) {
+    @media screen and (min-width: 768px) {
       @content;
     }
   }
   @if $breakpoint == display-large {
+    //lg
+    @media screen and (min-width: 992px) {
+      @content;
+    }
+  }
+  @if $breakpoint == extra-large {
     //xl
     @media screen and (min-width: 1201) {
       @content;

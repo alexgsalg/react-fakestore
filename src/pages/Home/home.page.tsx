@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 // context
 // components
-import { SectionBlock, SectionHeader } from '../../component-structures';
+import { GridBlock, SectionBlock, SectionHeader, WrapperBlock } from '../../component-structures';
 import Button from '../../components/Button/button.component';
 import Icon from '../../components/Icon/icon.component';
 import LoadingIcon from '../../components/Loading/loading.component';
@@ -42,16 +42,18 @@ const Home = () => {
 
       <SectionBlock id='showcase'>
         <SectionHeader title='Some Random' subtext='Products' dataText='showcase' />
-        {storeQuery.isLoading ? (
-          <LoadingIcon />
-        ) : (
-          <div className={`${styles.wrapper} ${styles.grid_layout}`}>
-            {store.map((item) => (
-              // TODO: Add action to redirect
-              <ProductCard key={item.id} data={item} />
-            ))}
-          </div>
-        )}
+        <WrapperBlock>
+          {storeQuery.isLoading ? (
+            <LoadingIcon />
+          ) : (
+            <GridBlock xs={2} sm={3} lg={4} customClass={styles.grid_layout}>
+              {store.map((item) => (
+                // TODO: Add action to redirect
+                <ProductCard key={item.id} data={item} />
+              ))}
+            </GridBlock>
+          )}
+        </WrapperBlock>
       </SectionBlock>
 
       <SectionBlock id='cta-split'>
@@ -85,31 +87,35 @@ const Home = () => {
 
       <SectionBlock id='best-sellers'>
         <SectionHeader title='Best Sellers' subtext='For some reason' dataText='products' />
-        {storeQuery.isLoading ? (
-          <LoadingIcon />
-        ) : (
-          <div className={`${styles.wrapper} ${styles.bestseller_grid}`}>
-            {bestSell.map((item) => (
-              // TODO: Add action to redirect
-              <ProductCard
-                key={item.id}
-                data={item}
-                isBestSeller={true}
-                className={styles.bestseller__item}
-              />
-            ))}
-          </div>
-        )}
+        <WrapperBlock>
+          {storeQuery.isLoading ? (
+            <LoadingIcon />
+          ) : (
+            <GridBlock xs={2} sm={3} lg={4} customClass={styles.bestseller_grid}>
+              {bestSell.map((item) => (
+                // TODO: Add action to redirect
+                <ProductCard
+                  key={item.id}
+                  data={item}
+                  isBestSeller={true}
+                  className={styles.bestseller__item}
+                />
+              ))}
+            </GridBlock>
+          )}
+        </WrapperBlock>
       </SectionBlock>
 
       <SectionBlock id='home-categories' type={'odd'}>
         <SectionHeader title='our categories' subtext='At least that' dataText='categories' />
-        <div className={`${styles.wrapper} ${styles.categories_grid}`}>
-          {categoryList?.data.map((item) => (
-            // TODO: Add action to redirect
-            <CategoryCard key={item.id} data={item} className={styles.categories__item} />
-          ))}
-        </div>
+        <WrapperBlock>
+          <GridBlock xs={2} sm={3} lg={4} customClass={styles.categories_grid}>
+            {categoryList?.data.map((item) => (
+              // TODO: Add action to redirect
+              <CategoryCard key={item.id} data={item} className={styles.categories__item} />
+            ))}
+          </GridBlock>
+        </WrapperBlock>
       </SectionBlock>
     </main>
   );

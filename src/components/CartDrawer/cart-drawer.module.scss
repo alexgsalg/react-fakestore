@@ -69,20 +69,20 @@
 /*=============================================================================
   Responsive Styles
 =============================================================================*/
-@include responsive(phone-large) {
+@include responsive(device-small) {
   .cart_drawer {
     width: clamp(300px, 40vw, 350px);
   }
 }
 
-@include responsive(tablet) {
+@include responsive(display-small) {
 }
 
-@include responsive(display-low) {
-}
-
-@include responsive(display-mid) {
+@include responsive(display-medium) {
 }
 
 @include responsive(display-large) {
+}
+
+@include responsive(extra-large) {
 }

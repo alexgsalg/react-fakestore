@@ -4,20 +4,20 @@
 .gridblock {
   display: grid;
 }
+@for $i from 1 through 6 {
+  .xs-#{$i} {
+    grid-template-columns: repeat($i, 1fr);
+    gap: var(--space-md);
+  }
+}
 
 /*=============================================================================
   Responsive Styles
 =============================================================================*/
-@include responsive(phone-large) {
-  @for $i from 1 through 6 {
-    .xs-#{$i} {
-      grid-template-columns: repeat($i, 1fr);
-      gap: var(--space-md);
-    }
-  }
+@include responsive(device-small) {
 }
 
-@include responsive(tablet) {
+@include responsive(display-small) {
   @for $i from 1 through 6 {
     .sm-#{$i} {
       grid-template-columns: repeat($i, 1fr);
@@ -26,7 +26,7 @@
   }
 }
 
-@include responsive(display-low) {
+@include responsive(display-medium) {
   @for $i from 1 through 6 {
     .md-#{$i} {
       grid-template-columns: repeat($i, 1fr);
@@ -35,7 +35,7 @@
   }
 }
 
-@include responsive(display-mid) {
+@include responsive(display-large) {
   @for $i from 1 through 6 {
     .lg-#{$i} {
       grid-template-columns: repeat($i, 1fr);
@@ -44,7 +44,7 @@
   }
 }
 
-@include responsive(display-large) {
+@include responsive(extra-large) {
   @for $i from 1 through 6 {
     .xl-#{$i} {
       grid-template-columns: repeat($i, 1fr);

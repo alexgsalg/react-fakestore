@@ -17,14 +17,14 @@ interface GridBlockProps extends StructureBlockProps<string> {
 const GridBlock = ({ id, customClass, children, xs, sm, md, lg, xl }: GridBlockProps) => {
   const customStyle = customClass ? customClass : '';
   const xsGrid = xs ? `xs-${xs}` : '';
-  const smGrid = sm ? `sm-${sm}` : '';
-  const mdGrid = md ? `md-${md}` : '';
-  const lgGrid = lg ? `lg-${lg}` : '';
-  const xlGrid = xl ? `xl-${xl}` : '';
+  const smGrid = sm ? ` sm-${sm}` : '';
+  const mdGrid = md ? ` md-${md}` : '';
+  const lgGrid = lg ? ` lg-${lg}` : '';
+  const xlGrid = xl ? ` xl-${xl}` : '';
   return (
     <div
       id={id}
-      className={`gridblock ${customStyle} ${xsGrid} ${smGrid} ${mdGrid} ${lgGrid} ${xlGrid}`}>
+      className={`gridblock ${customStyle} ${xsGrid}${smGrid}${mdGrid}${lgGrid}${xlGrid}`}>
       {children}
     </div>
   );

@@ -16,17 +16,17 @@
 /*=============================================================================
   Responsive Styles
 =============================================================================*/
-@include responsive(phone-large) {
+@include responsive(device-small) {
 }
 
-@include responsive(tablet) {
+@include responsive(display-small) {
   .grid_with_filter {
     grid-template-columns: minmax(150px, 200px) 1fr;
     gap: var(--space-lg);
   }
 }
 
-@include responsive(display-low) {
+@include responsive(display-medium) {
   .grid_with_filter {
     grid-template-columns: minmax(200px, 300px) 1fr;
     gap: var(--space-lg);
@@ -38,7 +38,7 @@
   }
 }
 
-@include responsive(display-mid) {
+@include responsive(display-large) {
   .grid_with_filter {
     grid-template-columns: minmax(200px, 300px) 1fr;
     gap: var(--space-lg);
@@ -50,5 +50,5 @@
   }
 }
 
-@include responsive(display-large) {
+@include responsive(extra-large) {
 }

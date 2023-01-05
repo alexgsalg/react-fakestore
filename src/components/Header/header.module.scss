@@ -99,7 +99,7 @@
 /*=============================================================================
   Responsive Styles
 =============================================================================*/
-@include responsive(display-low) {
+@include responsive(display-medium) {
   .header {
     padding: 0.2rem 1rem 0;
   }
