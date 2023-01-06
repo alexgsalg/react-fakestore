@@ -9,6 +9,7 @@ export type ProductType = {
   price: number;
   category: CategoryType;
   images: string[];
+  quantity?: number;
 };
 
 export interface ProductCardProps extends GenericCardProps<ProductType> {
