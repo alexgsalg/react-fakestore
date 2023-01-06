@@ -8,7 +8,7 @@ import CategoriesApi from '../../services/categories.services';
 import Careers from '../../_mock_/career-list';
 // styles and images
 import styles from './footer.module.scss';
-import Logo from '../Logo/logo.component';
+import Logo from '../../components/Logo/logo.component';
 
 const Footer = () => {
   const [career, setCareers] = useState<Array<{ id: number; title: string }>>(

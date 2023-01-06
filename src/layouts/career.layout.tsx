@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import { Outlet } from 'react-router-dom';
 // context
 // components
-import Header from '../components/Header/header.component';
+import Header from '../component-structures/Header/header.component';
 // imports
 // styles and images
 

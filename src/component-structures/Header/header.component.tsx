@@ -4,12 +4,12 @@ import { setCartOpenStatus } from '../../store/cart/cart.actions';
 import { selectCartStatus } from '../../store/cart/cart.selector';
 // components
 import CartIcon from '../../components/Cart-icon/cart-icon.component';
-import Navbar from '../Navbar/Navbar/navbar.component';
-import Icon from '../Icon/icon.component';
+import Navbar from '../../components/Navbar/Navbar/navbar.component';
+import Icon from '../../components/Icon/icon.component';
 // imports
 // styles and images
 import styles from './header.module.scss';
-import Logo from '../Logo/logo.component';
+import Logo from '../../components/Logo/logo.component';
 
 const Header = () => {
   const dispatch = useDispatch();
