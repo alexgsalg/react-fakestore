@@ -1,14 +1,10 @@
-@use '../../assets/sass/helpers.scss';
+@use '../../assets/sass/functions' as f;
 @import '../../assets/sass/mixins.scss';
 
 .footer {
-  padding: 2.5rem 1.5rem 3rem;
+  padding: f.rem(40) f.rem(24) f.rem(48);
   background-color: var(--grayish-darker);
   color: var(--grayish-light);
-
-  &_wrapper {
-    @extend .wrapper;
-  }
 
   &_grid {
     display: grid;
@@ -16,8 +12,6 @@
     gap: var(--space-lg);
   }
 
-  &_section {
-  }
   &_section:first-child {
     grid-column: span 2;
   }
@@ -37,11 +31,6 @@
   Responsive Styles
 =============================================================================*/
 @include responsive(device-small) {
-  .footer {
-    &_grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
 }
 
 @include responsive(display-small) {

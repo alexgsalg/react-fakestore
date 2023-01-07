@@ -1,13 +1,15 @@
+@use '../../assets/sass/functions' as f;
+
 .section {
   &_basic,
   &_odd {
-    padding: 2rem 1.25rem;
+    padding: f.rem(32) f.rem(20);
   }
   &_odd {
     background-color: var(--light-opacity);
   }
 
   &_no_margin {
-    padding: 0 1.25rem;
+    padding: 0 f.rem(20);
   }
 }

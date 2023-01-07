@@ -1,11 +1,11 @@
+@use '../../assets/sass/functions' as f;
 @import '../../assets/sass/mixins.scss';
-@import '../../assets/sass/helpers';
 
 .section_header {
   @include flex(center, center);
   flex-direction: column;
   position: relative;
-  padding: 1.5rem 0;
+  padding: f.rem(24) 0;
   color: var(--grayish-darker);
   container-type: inline-size;
 
@@ -14,14 +14,14 @@
   }
 
   &__title {
-    font-size: clamp(30px, 10vw, 50px);
+    font-size: clamp(f.rem(30), 10vw, f.rem(50));
     line-height: 1.2em;
     text-transform: lowercase;
     text-align: center;
   }
 
   &__subtext {
-    font-size: clamp(16px, 5vw, 20px);
+    font-size: clamp(f.rem(16px), 5vw, f.rem(20));
     font-weight: 600;
     text-transform: uppercase;
   }
@@ -35,7 +35,7 @@
     width: 100%;
     text-align: center;
     color: inherit;
-    font-size: clamp(20px, 12vw, 100px);
+    font-size: clamp(f.rem(20), 12vw, f.rem(100));
     letter-spacing: 0.2rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -62,15 +62,15 @@
 
 @include responsive(display-medium) {
   .section_header {
-    padding: 4rem 0;
+    padding: f.rem(64) 0;
     &::before {
       top: 51%;
     }
     &__title {
-      font-size: clamp(30px, 8vw, 45px);
+      font-size: clamp(f.rem(30), 8vw, f.rem(45));
     }
     &__subtext {
-      font-size: clamp(16px, 4vw, 18px);
+      font-size: clamp(f.rem(16), 4vw, f.rem(18));
     }
   }
 }
@@ -79,7 +79,7 @@
   .section_header {
     padding: 4rem 0;
     &::before {
-      font-size: clamp(20px, 12vw, 120px);
+      font-size: clamp(f.rem(20), 12vw, f.rem(120));
     }
   }
 }

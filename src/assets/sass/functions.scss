@@ -1,0 +1,10 @@
+@use 'sass:math';
+
+@function rem($pixel) {
+  @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16) + rem;
+  } @else {
+    $value: math.div($pixel, 1px);
+    @return math.div($value, 16) + rem;
+  }
+}

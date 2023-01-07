@@ -1,3 +1,4 @@
+@use '../../assets/sass/functions' as f;
 @use '../../assets/sass/helpers.scss';
 @import '../../assets/sass/mixins.scss';
 
@@ -5,9 +6,8 @@
   position: fixed;
   inset: 0 0 auto;
   width: 100vw;
-  padding: 0.4rem 0.5rem;
+  padding: f.rem(6.4) f.rem(8);
   background-color: var(--lightfull);
-  // border-bottom: 1px solid var(--blue-grayish-opacity);
   z-index: 200;
 }
 
@@ -15,7 +15,7 @@
   @extend .wrapper;
 
   display: grid;
-  grid-template-columns: 3.75rem auto min-content;
+  grid-template-columns: f.rem(60) auto min-content;
   grid-template-areas: 'menu logo actions';
 }
 
@@ -34,7 +34,7 @@
   @extend .not_clicable;
 
   font-family: var(--font-title);
-  font-size: clamp(1.7rem, 1.8rem, 1.95rem);
+  font-size: clamp(f.rem(27), f.rem(28.8), f.rem(31));
   letter-spacing: -0.1rem;
   line-height: 1em;
   transition: all 250ms ease-in;
@@ -70,14 +70,14 @@
   grid-area: actions;
   @include flex(flex-end, center);
 
-  gap: 0.5rem;
+  gap: f.rem(8);
 
   &__cart,
   &__search {
     position: relative;
     @include flex(center, center);
 
-    padding: 0.3rem;
+    padding: f.rem(4.8);
     cursor: pointer;
   }
 
@@ -101,11 +101,11 @@
 =============================================================================*/
 @include responsive(display-medium) {
   .header {
-    padding: 0.2rem 1rem 0;
+    padding: f.rem(3.2) f.rem(16) 0;
   }
 
   .header_wrapper {
-    grid-template-columns: minmax(110px, 150px) auto min-content;
+    grid-template-columns: minmax(f.rem(110), f.rem(150)) auto min-content;
     grid-template-areas: 'logo menu actions';
   }
 
@@ -118,6 +118,6 @@
 
   .header_actions__cart,
   .header_actions__search {
-    padding: 0.5rem;
+    padding: f.rem(8);
   }
 }

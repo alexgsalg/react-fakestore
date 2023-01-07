@@ -1,6 +1,7 @@
+@use '../../assets/sass/functions' as f;
 @import '../../assets/sass/mixins.scss';
-@import '../../assets/sass/helpers';
 
 .wrapper {
-  @extend .wrapper;
+  width: min(100%, f.rem(1200));
+  margin-inline: auto !important;
 }
