@@ -7,9 +7,11 @@ class ProductApi {
     return useQuery(['products'], async () => await http.get<ProductType[]>('/products/'));
   };
 
-  getProductPaginated = (queryId: string, offset = 0, limit = 10) => {
+  getProductPaginated = (queryId: string, page = 1, limit = 10) => {
+    const offset = (page - 1) * limit;
+    console.count('product query');
     return useQuery(
-      [queryId],
+      [queryId, page],
       async () => await http.get<ProductType[]>(`/products?offset=${offset}&limit=${limit}`),
     );
   };

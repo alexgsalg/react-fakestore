@@ -18,7 +18,7 @@ const Home = () => {
   const [store, setStore] = useState<ProductType[]>([]);
   const [bestSell, setBestSell] = useState<ProductType[]>([]);
 
-  const { data: storeList, ...storeQuery } = ProductApi.getProductPaginated('homeProducts', 0, 10);
+  const { data: storeList, ...storeQuery } = ProductApi.getProductPaginated('homeProducts', 1, 10);
   const { data: categoryList } = CategoriesApi.getCategoriesPaginated('displayCategories', 0, 8);
 
   // store Query

@@ -20,7 +20,7 @@ const Products = () => {
     data: storeList,
     isLoading,
     ...storeQuery
-  } = ProductApi.getProductPaginated('paginatedProducts', 0, 12);
+  } = ProductApi.getProductPaginated('paginatedProducts', 1, 12);
 
   useEffect(() => {
     setHorizontalCard(cardOrientation);

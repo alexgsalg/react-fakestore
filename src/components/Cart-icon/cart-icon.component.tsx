@@ -1,8 +1,7 @@
-import {
-  MouseEventHandler,
-  // useState
-} from 'react';
+import { MouseEventHandler } from 'react';
+import { useSelector } from 'react-redux';
 // context
+import { selectCarCount } from '../../store/cart/cart.selector';
 // components
 // imports
 // images
@@ -14,11 +13,11 @@ type CartIconType = {
   onCartIconClick: MouseEventHandler<HTMLDivElement>;
 };
 const CartIcon = ({ onCartIconClick }: CartIconType) => {
-  // const [counter, setCounter] = useState<number>(0);
+  const cartCount = useSelector(selectCarCount);
   return (
     <div className={styles.cart_icon_container} onClick={onCartIconClick}>
       <CartIconSvg className={styles.cart_icon_svg} />
-      <span className={styles.cart_icon_count}>1</span>
+      {cartCount > 0 ?? <span className={styles.cart_icon_count}>{cartCount}</span>}
     </div>
   );
 };
